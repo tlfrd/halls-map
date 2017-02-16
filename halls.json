@@ -1,0 +1,1722 @@
+[
+  {
+    "University": "Birkbeck",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Bishop Complex (4 halls)",
+    "Address": "Uxbridge, Middlesex, UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Clifton Hall",
+    "Address": "Uxbridge, UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Chepstow Hall",
+    "Address": "Uxbridge, Middlesex, UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Faraday Hall",
+    "Address": "Uxbridge, Middlesex, UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Isembard Complex",
+    "Address": "Uxbridge Middlesex UB8 3F",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Lancaster Complex",
+    "Address": "Uxbridge Middlesex UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Mill Hall",
+    "Address": "Topping Lane, Uxbridge Middlesex, UB8 2TL",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "Brunel",
+    "Hall": "Saltash Hall",
+    "Address": "Uxbridge, Middlesex, UB8 3PH",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Brunel University",
+    "Managed by": "Brunel University",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Liberty Court",
+    "Address": "16 Briset Street, EC1M 5HD",
+    "Latitude": 51.521382,
+    "Longitude": -0.103177,
+    "Owned by": "Liberty Living",
+    "Managed by": "Liberty Living",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Liberty Hall",
+    "Address": "29 Graham Street, N1 8LA",
+    "Latitude": 51.530483,
+    "Longitude": -0.09799,
+    "Owned by": "Liberty Living",
+    "Managed by": "Liberty Living",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "East Central House",
+    "Address": "115-131 Lever Street, EC1V 3RH",
+    "Latitude": 51.527258,
+    "Longitude": -0.094976,
+    "Owned by": "Unite",
+    "Managed by": "Unite",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Alliance House",
+    "Address": "44-45 Newington Green, London, N16 9QH",
+    "Latitude": 51.551981,
+    "Longitude": -0.085998,
+    "Owned by": "Santuary Students",
+    "Managed by": "Santuary Students",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Willen House",
+    "Address": "8-26 Bath Street, London, EC1V 9DX",
+    "Latitude": 51.527896,
+    "Longitude": -0.091721,
+    "Owned by": "EC1 Residences Ltd",
+    "Managed by": "Derwent FM",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Pure City",
+    "Address": "11 Bastwick Street, London, EC1V 3AQ",
+    "Latitude": 51.524762,
+    "Longitude": -0.098265,
+    "Owned by": "CRM",
+    "Managed by": "CRM",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Charles Morton Court",
+    "Address": "37-43 Green Lanes, Newington Green, London, N16 9BS",
+    "Latitude": 51.55263,
+    "Longitude": -0.087515,
+    "Owned by": "Collegiate (Private company)",
+    "Managed by": "Collegiate (Private company)",
+    "Notes": ""
+  },
+  {
+    "University": "City",
+    "Hall": "Tufnell House",
+    "Address": "Huddleston Road, London, N7 0EG",
+    "Latitude": 51.558138,
+    "Longitude": -0.135183,
+    "Owned by": "Prodigy Living",
+    "Managed by": "Prodigy Living",
+    "Notes": "thought to be a subsidiary of Greystar Holdings"
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Town Hall",
+    "Address": "Peckham Rd, Camberwell, London SE5 8UB",
+    "Latitude": 51.473757,
+    "Longitude": -0.082363,
+    "Owned by": "Homes for Students",
+    "Managed by": "Homes for Students",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Batavia Mews",
+    "Address": "Batavia Mews, London SE14",
+    "Latitude": 51.475876,
+    "Longitude": -0.038011,
+    "Owned by": "Goldsmiths UoL",
+    "Managed by": "Goldsmiths UoL",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Chesterman House",
+    "Address": "Chesterman House, London SE14 6PP",
+    "Latitude": 51.47555,
+    "Longitude": -0.035124,
+    "Owned by": "Campus Living Villages",
+    "Managed by": "Campus Living Villages",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Dean House",
+    "Address": "Dean House, London SE14 6AT",
+    "Latitude": 51.476001,
+    "Longitude": -0.035795,
+    "Owned by": "Goldsmiths UoL",
+    "Managed by": "Goldsmiths UoL",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Landale House",
+    "Address": "101 Lower Rd, London SE16 2XG",
+    "Latitude": 51.496252,
+    "Longitude": -0.051084,
+    "Owned by": "Homes for Students",
+    "Managed by": "Homes for Students",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Loring Hall",
+    "Address": "Loring Hall, St James's, London SE14 6AD",
+    "Latitude": 51.474552,
+    "Longitude": -0.039552,
+    "Owned by": "Goldsmiths UoL",
+    "Managed by": "Goldsmiths UoL",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "McMillan Student Village",
+    "Address": "McMillan Student Village, Creek Rd, London SE8 3BY",
+    "Latitude": 51.48127,
+    "Longitude": -0.021155,
+    "Owned by": "Campus Living Villages",
+    "Managed by": "Campus Living Villages",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Mansion View",
+    "Address": "293-305 High St, Stratford E15 2TJ",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "Mansion Student",
+    "Managed by": "Mansion Student",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Quantum Court",
+    "Address": "10 King David Ln, Shadwell, London E1 0DY",
+    "Latitude": 51.51011,
+    "Longitude": -0.053522,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Raymont Hall",
+    "Address": "Raymont Hall, 57-63 Wickham Rd, London SE4 1LX",
+    "Latitude": 51.463209,
+    "Longitude": -0.032057,
+    "Owned by": "Campus Living Villages",
+    "Managed by": "Campus Living Villages",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Surrey House",
+    "Address": "Surrey House, London SE14 6PB",
+    "Latitude": 51.47273,
+    "Longitude": -0.032797,
+    "Owned by": "Campus Living Villages",
+    "Managed by": "Campus Living Villages",
+    "Notes": ""
+  },
+  {
+    "University": "Goldsmiths",
+    "Hall": "Surrey House Annexe",
+    "Address": "Surrey House, London SE14 6PB",
+    "Latitude": 51.47273,
+    "Longitude": -0.032797,
+    "Owned by": "Campus Living Villages",
+    "Managed by": "Campus Living Villages",
+    "Notes": ""
+  },
+  {
+    "University": "Imperial",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Angel Lane",
+    "Address": "Angel Lane, Stratford, E15 1BB",
+    "Latitude": 51.543804,
+    "Longitude": -0.000204,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Champion Hill Residence",
+    "Address": "Champion Hill, Denmark Hill, London, SE5 8AN",
+    "Latitude": 51.464321,
+    "Longitude": -0.088558,
+    "Owned by": "King's College London",
+    "Managed by": "King's College London",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Ewen Henderson Court",
+    "Address": "40 Goodwood Road, New Cross, London SE14 6BL",
+    "Latitude": 51.476682,
+    "Longitude": -0.039803,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Great Dover St Apts",
+    "Address": "165 Great Dover Street, London SE1 4XA",
+    "Latitude": 51.497944,
+    "Longitude": -0.090071,
+    "Owned by": "King's College London",
+    "Managed by": "King's College London",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Iris Brook and Orchard Lisle",
+    "Address": "Talbot Yard, London SE1 1XT",
+    "Latitude": 51.503874,
+    "Longitude": -0.089357,
+    "Owned by": "Fresh Student Living",
+    "Managed by": "Fresh Student Living",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Julian Markham House",
+    "Address": "114 Walworth Road, London SE17 1JL",
+    "Latitude": 51.492112,
+    "Longitude": -0.098503,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Moonraker Point",
+    "Address": "1-230 Pocock Street, London SE1 0FN",
+    "Latitude": 51.502278,
+    "Longitude": -0.099542,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Stamford Street Apartments",
+    "Address": "127 Stamford Street, London SE1 9NQ",
+    "Latitude": 51.505241,
+    "Longitude": -0.111568,
+    "Owned by": "King's College London",
+    "Managed by": "King's College London",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Stratford One",
+    "Address": "1 International Way, London E20 1GS",
+    "Latitude": 51.545516,
+    "Longitude": -0.004974,
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Tower Bridge",
+    "Address": "52 Minories, City of London, London EC3N 1JA",
+    "Latitude": 51.511433,
+    "Longitude": -0.074997,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Wolfson House",
+    "Address": "Weston Street, London SE1 3RB",
+    "Latitude": 51.502581,
+    "Longitude": -0.085555,
+    "Owned by": "King's College London",
+    "Managed by": "King's College London",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Urbanest Hoxton",
+    "Address": "100 East Road, Hoxton, London N1 6AA",
+    "Latitude": 51.529982,
+    "Longitude": -0.086389,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Urbanest Westminster Bridge",
+    "Address": "199 Westminster Bridge Road, London SE1 7FP",
+    "Latitude": 51.500373,
+    "Longitude": -0.115973,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "King's",
+    "Hall": "Chapter Lewisham",
+    "Address": "46 Thurston Road, London, SE13 7SD",
+    "Latitude": 51.466229,
+    "Longitude": -0.016769,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": "a subsidary of Greystar Holdings"
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Kingston",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London Metropolitan",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "LSE",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London South Bank",
+    "Hall": "Dante Road",
+    "Address": "Dante Road, 2 Dante Place, London SE11 4RX",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "University?",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London South Bank",
+    "Hall": "David Bomberg House",
+    "Address": "282-302 Borough High Street, London SE1 1JJ",
+    "Latitude": 51.499649,
+    "Longitude": -0.09635,
+    "Owned by": "University?",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London South Bank",
+    "Hall": "McLaren House",
+    "Address": "McLaren House, 1 St George's Circus, London, SE1 0AP",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "University?",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London South Bank",
+    "Hall": "New Kent Road",
+    "Address": "New Kent Road Reception, 83 New Kent Road, London SE1 6RD",
+    "Latitude": 51.494356,
+    "Longitude": -0.098892,
+    "Owned by": "University?",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "London South Bank",
+    "Hall": "Havering Campus",
+    "Address": "Swan Housing, Carrock Court, Union Road, Romford, Essex, RM7 0GP",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "Swan Housing Association",
+    "Managed by": "Swan Housing Association",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Middlesex",
+    "Hall": "done - data in map (not sure why it disappeared from table!)",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Queen Mary",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Royal Holloway",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Dinwiddy House",
+    "Address": "189-205 Pentonville Rd, Kings Cross, London N1 9NF",
+    "Latitude": 51.530876,
+    "Longitude": -0.116162,
+    "Owned by": "Sanctuary Students",
+    "Managed by": "Sanctuary Students",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Paul Robeson House",
+    "Address": "1 Penton Rise, Kings Cross, London WC1X 9EH",
+    "Latitude": 51.530964,
+    "Longitude": -0.113911,
+    "Owned by": "Sanctuary Students",
+    "Managed by": "Sanctuary Students",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Urbanest St Pancras",
+    "Address": "103 Camley St, Kings Cross, London N1C 4BN",
+    "Latitude": 51.537831,
+    "Longitude": -0.130427,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Chapter Highbury",
+    "Address": "309 Holloway Rd, London N7 9DS",
+    "Latitude": 51.553466,
+    "Longitude": -0.113255,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Helen Graham",
+    "Address": "57 Great Russell St, London WC1B 3BA",
+    "Latitude": 51.518352,
+    "Longitude": -0.125499,
+    "Owned by": "Viridian",
+    "Managed by": "Viridian",
+    "Notes": ""
+  },
+  {
+    "University": "SOAS",
+    "Hall": "Goldsmiths House",
+    "Address": "50 Park Village E, Kings Cross, London NW1 7SX",
+    "Latitude": 51.533251,
+    "Longitude": -0.143421,
+    "Owned by": "Viridian",
+    "Managed by": "Viridian",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "St. George's",
+    "Hall": "Horton Halls",
+    "Address": "Horton Halls, St Georges Grove, London SW17 0BD",
+    "Latitude": 51.435966,
+    "Longitude": -0.175567,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "St. Mary's",
+    "Hall": "All university owned; will sort later",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "https://www.whatdotheyknow.com/request/306626/response/751976/attach/html/2/St%20Marys%20University%20Twickenham%20Hall%20Data.xlsx.html",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Ann Stephenson",
+    "Address": "109 Camden Road, London, NW1 9HZ",
+    "Latitude": 51.544776,
+    "Longitude": -0.135197,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Arthur Tattersall",
+    "Address": "115-131 Gower Street, London, WC1E 6AP",
+    "Latitude": 51.523232,
+    "Longitude": -0.133626,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Astor College",
+    "Address": "99 Charlotte Street, London, W1T 4QB",
+    "Latitude": 51.520802,
+    "Longitude": -0.137483,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Bernard Johnson House",
+    "Address": "78 Fortis Green, London, N2 9EX",
+    "Latitude": 51.590631,
+    "Longitude": -0.158119,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Campbell House East",
+    "Address": "5-10 Taviton Street, London, WC1H 0BX",
+    "Latitude": 51.525626,
+    "Longitude": -0.131419,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Campbell House West",
+    "Address": "20-24 Taviton Street, London, WC1H 0BX",
+    "Latitude": 51.525745,
+    "Longitude": -0.131823,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Chapter Islington",
+    "Address": "32-34 Market Road, London, N7 9AW",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Endsleigh Gardens",
+    "Address": "9-11 Endsleigh Gardens, London WC1H 0ED",
+    "Latitude": 51.526256,
+    "Longitude": -0.131793,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Frances Gardener House",
+    "Address": "Wren Street, Gray's Inn Road, London, WC1X 0HD",
+    "Latitude": 51.525827,
+    "Longitude": -0.115551,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Goldsmid House",
+    "Address": "36 Gillingham Street, London, SW1V 1HU",
+    "Latitude": 51.493584,
+    "Longitude": -0.142604,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Gordon Square",
+    "Address": "55-59 Gordon Square, London WC1H 0NU",
+    "Latitude": 51.523823,
+    "Longitude": -0.129461,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Hawkridge House",
+    "Address": "Hawkridge House, Warden Road, London, NW5 4SA",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Ian Baker House",
+    "Address": "20 Maple Street, London W1T 5HB",
+    "Latitude": 51.522181,
+    "Longitude": -0.13829,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Ifor Evans Hall",
+    "Address": "109 Camden Road, London, NW1 9HZ",
+    "Latitude": 51.544776,
+    "Longitude": -0.135197,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "James Lighthill House",
+    "Address": "3 Penton Rise, London, WC1X 9EN",
+    "Latitude": 51.530745,
+    "Longitude": -0.114356,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "John Adams Hall",
+    "Address": "15-23 Endsleigh Street, London WC1H 0DP",
+    "Latitude": 51.525879,
+    "Longitude": -0.131032,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "John Dodgson House",
+    "Address": "24-36 Bidborough Street, London, WC1H 9BL",
+    "Latitude": 51.528497,
+    "Longitude": -0.126078,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "John Tovell House",
+    "Address": "89 and 93-97 Gower Street, London, WC1E 6AA",
+    "Latitude": 51.522588,
+    "Longitude": -0.132953,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Langton Close",
+    "Address": "Wren Street, Gray's Inn Road, London, WC1X 0HD",
+    "Latitude": 51.525827,
+    "Longitude": -0.115551,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Liberty House",
+    "Address": "1 Sebastian Street, London, EC1V 0HF",
+    "Latitude": 51.526853,
+    "Longitude": -0.100694,
+    "Owned by": "Liberty Living",
+    "Managed by": "Liberty Living",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Max Rayne House",
+    "Address": "109 Camden Road, London, NW1 9HZ",
+    "Latitude": 51.544776,
+    "Longitude": -0.135197,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Neil Sharp House",
+    "Address": "109 Camden Road, London, NW1 9HZ",
+    "Latitude": 51.544776,
+    "Longitude": -0.135197,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "New Hall",
+    "Address": "465 Caledonian Road, London N7 9GU",
+    "Latitude": 51.547169,
+    "Longitude": -0.118062,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "North Lodge",
+    "Address": "Lebus Street, Tottenham, London N17 9FD",
+    "Latitude": 51.589576,
+    "Longitude": -0.058375,
+    "Owned by": "UNITE",
+    "Managed by": "UNITE",
+    "Notes": "Unite students?"
+  },
+  {
+    "University": "UCL",
+    "Hall": "Prankerd House",
+    "Address": "195 North Gower Street, London, NW1 2NJ",
+    "Latitude": 51.526432,
+    "Longitude": -0.136881,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Ramsay Hall",
+    "Address": "20 Maple Street, London W1T 5HB",
+    "Latitude": 51.522181,
+    "Longitude": -0.13829,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "Schafer House",
+    "Address": "168-182 Drummond Street, London, NW1 3HZ",
+    "Latitude": 51.526262,
+    "Longitude": -0.139814,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UCL",
+    "Hall": "St. Pancras Way",
+    "Address": "11-13 St Pancras Way, London NW1 0PT",
+    "Latitude": 51.5382,
+    "Longitude": -0.133512,
+    "Owned by": "UNITE",
+    "Managed by": "UNITE",
+    "Notes": "Unite students?"
+  },
+  {
+    "University": "University of East London",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "University of Greenwich",
+    "Hall": "Avery Hill Village Phase 1",
+    "Address": "London SE9 2UG",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Greenwich",
+    "Hall": "Avery Hill Village Phase 1a 2",
+    "Address": "London SE9 2UG",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Carillion",
+    "Managed by": "Carillion",
+    "Notes": ""
+  },
+  {
+    "University": "University of Greenwich",
+    "Hall": "Daniel Defoe Hall",
+    "Address": "10 Lovibond Ln, London SE10 9FY",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "Legal and General",
+    "Managed by": "Legal and General",
+    "Notes": ""
+  },
+  {
+    "University": "University of Greenwich",
+    "Hall": "Cutty Sark Hall",
+    "Address": "1 Welland St, London SE10 9ED",
+    "Latitude": 51.481588,
+    "Longitude": -0.011077,
+    "Owned by": "BIS (Postal Services Act 2011) Company Ltd",
+    "Managed by": "BIS (Postal Services Act 2011) Company Ltd",
+    "Notes": ""
+  },
+  {
+    "University": "University of Greenwich",
+    "Hall": "Devonport House",
+    "Address": "King William Walk, London SE10 9JW",
+    "Latitude": 51.480435,
+    "Longitude": -0.007229,
+    "Owned by": "Unknown",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Bede House",
+    "Address": "",
+    "Latitude": 51.45658,
+    "Longitude": -0.243464,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Elm Grove Hall",
+    "Address": "",
+    "Latitude": 51.45744,
+    "Longitude": -0.244159,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Lee House",
+    "Address": "",
+    "Latitude": 51.4575,
+    "Longitude": -0.243231,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Newman House",
+    "Address": "",
+    "Latitude": 51.456407,
+    "Longitude": -0.243834,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Shaw House",
+    "Address": "",
+    "Latitude": 51.458829,
+    "Longitude": -0.245178,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Aspen House",
+    "Address": "",
+    "Latitude": 51.45511,
+    "Longitude": -0.249641,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Chadwick Hall",
+    "Address": "",
+    "Latitude": 51.453093,
+    "Longitude": -0.244571,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Garden Court",
+    "Address": "",
+    "Latitude": 51.45559,
+    "Longitude": -0.243525,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Laurence",
+    "Address": "",
+    "Latitude": 51.455689,
+    "Longitude": -0.246724,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Linden House",
+    "Address": "",
+    "Latitude": 51.455137,
+    "Longitude": -0.250146,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Mount Clare",
+    "Address": "",
+    "Latitude": 51.451887,
+    "Longitude": -0.250937,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "New Court",
+    "Address": "",
+    "Latitude": 51.451887,
+    "Longitude": -0.250937,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Old Court",
+    "Address": "",
+    "Latitude": 51.451887,
+    "Longitude": -0.250937,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Willow House",
+    "Address": "",
+    "Latitude": 51.454812,
+    "Longitude": -0.249979,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Aldersgate Court",
+    "Address": "",
+    "Latitude": 51.459452,
+    "Longitude": -0.244805,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Epworth Court",
+    "Address": "",
+    "Latitude": 51.459803,
+    "Longitude": -0.244902,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Wesley Hall",
+    "Address": "",
+    "Latitude": 51.459858,
+    "Longitude": -0.2445,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Beverley and Cheltenham",
+    "Address": "",
+    "Latitude": 51.449072,
+    "Longitude": -0.241906,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Durham and Gilesgate",
+    "Address": "",
+    "Latitude": 51.44904,
+    "Longitude": -0.241501,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Kings and Melrose",
+    "Address": "",
+    "Latitude": 51.448682,
+    "Longitude": -0.241573,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Roehampton",
+    "Hall": "Sutherland and Walpole",
+    "Address": "",
+    "Latitude": 51.448182,
+    "Longitude": -0.241648,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "University of West London",
+    "Hall": "Paragon Student Lets",
+    "Address": "Boston Manor Rd, Brentford TW8 9QW",
+    "Latitude": 51.490356,
+    "Longitude": -0.315881,
+    "Owned by": "Paragon Student Lets",
+    "Managed by": "Paragon Student Lets",
+    "Notes": "aka Toaurag Trust (a subsidiary of Notting Hill Housing Group)"
+  },
+  {
+    "University": "University of West London",
+    "Hall": "Unite Kendrick Hall",
+    "Address": "4 Crown Place, RG1 5A",
+    "Latitude": 51.449647,
+    "Longitude": -0.96283,
+    "Owned by": "Unite",
+    "Managed by": "Unite",
+    "Notes": "Unite Students?"
+  },
+  {
+    "University": "University of West London",
+    "Hall": "Central Studios Ealing",
+    "Address": "1 The Grove, London, W5 5BL",
+    "Latitude": 51.510471,
+    "Longitude": -0.304688,
+    "Owned by": "Fresh Student Living",
+    "Managed by": "Fresh Student Living",
+    "Notes": ""
+  },
+  {
+    "University": "University of West London",
+    "Hall": "The Lyra",
+    "Address": "Portal Way, London W3 6BX",
+    "Latitude": 51.521003,
+    "Longitude": -0.262336,
+    "Owned by": "Downing Students",
+    "Managed by": "Downing Students",
+    "Notes": ""
+  },
+  {
+    "University": "University of West London",
+    "Hall": "Sovereign Court Hounslow",
+    "Address": "21 Staines Rd, Hounslow TW3 3HR",
+    "Latitude": 51.46767,
+    "Longitude": -0.366819,
+    "Owned by": "DandiSpace",
+    "Managed by": "DandiSpace",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Harrow Hall",
+    "Address": "Watford Road, Northwick Park, Middlesex, HA1 3TP",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Marylebone Hall",
+    "Address": "35 Marylebone Road, London, NW1 5LS",
+    "Latitude": 51.52235,
+    "Longitude": -0.154977,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Raffles House",
+    "Address": "6 Lakeside Way, Wembley, London HA9 0BU",
+    "Latitude": 51.55727,
+    "Longitude": -0.283881,
+    "Owned by": "Prodigy Living",
+    "Managed by": "Prodigy Living",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Urbanest Hoxton",
+    "Address": "100 East Road, London, N1 6AA",
+    "Latitude": 51.529856,
+    "Longitude": -0.086497,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Urbanest Tower Bridge",
+    "Address": "52 Minories, London EC3N 1JA",
+    "Latitude": 51.511433,
+    "Longitude": -0.074997,
+    "Owned by": "Urbanest",
+    "Managed by": "Urbanest",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Felda House",
+    "Address": "575 North End Road, Wembley, HA9 0UU",
+    "Latitude": 51.561372,
+    "Longitude": -0.277819,
+    "Owned by": "CRM Students",
+    "Managed by": "CRM Students",
+    "Notes": ""
+  },
+  {
+    "University": "University of Westminster",
+    "Hall": "Alexander Fleming Hall",
+    "Address": "3 Hoxton Market, Pitfield Street, London N1 6HG",
+    "Latitude": "FAILED",
+    "Longitude": "FAILED",
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "College Hall",
+    "Address": "Malet Street, London WC1E 7HZ",
+    "Latitude": 51.52195,
+    "Longitude": -0.130824,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "Connaught Hall",
+    "Address": "Tavistock Square, London WC1H 9EX",
+    "Latitude": 51.5251,
+    "Longitude": -0.128344,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "Garden Halls",
+    "Address": "Cartwright Gardens, Kings Cross, London WC1H 9EF",
+    "Latitude": 51.526833,
+    "Longitude": -0.126447,
+    "Owned by": "UPP",
+    "Managed by": "UPP",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "International Hall",
+    "Address": "Lansdowne Terrace, London WC1N 1DJ",
+    "Latitude": 51.523941,
+    "Longitude": -0.120987,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "Lillian Penson Hall",
+    "Address": "Talbot Square, London W2 1TT",
+    "Latitude": 51.514981,
+    "Longitude": -0.174892,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "UoL Halls",
+    "Hall": "Nutford House",
+    "Address": "Brown Street, London W1H 5UL",
+    "Latitude": 51.517054,
+    "Longitude": -0.162795,
+    "Owned by": "University",
+    "Managed by": "University",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "",
+    "Hall": "",
+    "Address": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter Kings Cross",
+    "Address": "200 Pentonville Road, London N1 9JP",
+    "Latitude": 51.531103,
+    "Longitude": -0.117905,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter Spitalfield",
+    "Address": "9 Frying Pan Alley, London E1 7HS",
+    "Latitude": 51.517965,
+    "Longitude": -0.076772,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter Portabello",
+    "Address": "1 Alderson Street, London W10 5JY",
+    "Latitude": 51.526543,
+    "Longitude": -0.209924,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter Highbury",
+    "Address": "46 Thurston Road, London, SE13 7SD",
+    "Latitude": 51.466229,
+    "Longitude": -0.016769,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter Lewisham",
+    "Address": "46 Thurston Road, London, SE13 7SD",
+    "Latitude": 51.466229,
+    "Longitude": -0.016769,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Chapter South Bank",
+    "Address": "17 Great Suffolk Street, London SE1 0NS",
+    "Latitude": 51.504903,
+    "Longitude": -0.101203,
+    "Owned by": "Chapter",
+    "Managed by": "Chapter",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Claredale House",
+    "Address": "Claredale Street, London E2 6P",
+    "Latitude": 51.530969,
+    "Longitude": -0.061993,
+    "Owned by": "Cass and Claredale",
+    "Managed by": "Cass and Claredale",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Sir John Cass House",
+    "Address": "37-43 Green Lanes, Mildmay Ward, London N16 9BS",
+    "Latitude": 51.55263,
+    "Longitude": -0.087515,
+    "Owned by": "Cass and Claredale",
+    "Managed by": "Cass and Claredale",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Charles Morton Court",
+    "Address": "150 Well Street, London, E9 7LQ",
+    "Latitude": 51.542544,
+    "Longitude": -0.048264,
+    "Owned by": "Collegiate AC",
+    "Managed by": "Collegiate AC",
+    "Notes": ""
+  },
+  {
+    "University": "Other/Intercollegiate",
+    "Hall": "Halsmere Studios",
+    "Address": "Halsmere Road, Camberwell SE5 9LN",
+    "Latitude": 51.474991,
+    "Longitude": -0.101923,
+    "Owned by": "Collegiate AC",
+    "Managed by": "Collegiate AC",
+    "Notes": "album"
+  },
+  {
+    "University": "The White Stripes",
+    "Hall": 1999,
+    "Address": "-",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "De Stijl",
+    "Hall": 2000,
+    "Address": "-",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "White Blood Cells",
+    "Hall": 2001,
+    "Address": 61,
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Elephant",
+    "Hall": 2003,
+    "Address": 6,
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Get Behind Me Satan",
+    "Hall": 2005,
+    "Address": 3,
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Icky Thump",
+    "Hall": 2007,
+    "Address": 2,
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Under Great White Northern Lights",
+    "Hall": 2010,
+    "Address": 11,
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Live in Mississippi",
+    "Hall": 2011,
+    "Address": "-",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Live at the Gold Dollar",
+    "Hall": 2012,
+    "Address": "-",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  },
+  {
+    "University": "Nine Miles from the White City",
+    "Hall": 2013,
+    "Address": "-",
+    "Latitude": "",
+    "Longitude": "",
+    "Owned by": "",
+    "Managed by": "",
+    "Notes": ""
+  }
+]
