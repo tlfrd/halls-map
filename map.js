@@ -11,6 +11,10 @@ $(document).ready(function () {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(mymap);
 
+  loadMap(mymap);
+});
+
+function loadMap(map) {
   // remove nested ajax
   $.getJSON("halls.json", function(data) {
     $.getJSON("companies.json", function(companies) {
@@ -25,7 +29,7 @@ $(document).ready(function () {
               fillColor: 'red',
               fillOpacity: 0.5,
               radius: 100
-          }).addTo(mymap);
+          }).addTo(map);
           tempMarker.bindPopup(val.University + "<br/>" + val.Hall + "<br/>" + val.Address).openPopup();
           if (company) {
             if (isNumeric(company.Latitude) && isNumeric(company.Latitude)) {
@@ -34,15 +38,15 @@ $(document).ready(function () {
                   fillColor: 'blue',
                   fillOpacity: 0.5,
                   radius: 100
-              }).addTo(mymap);
-              var tempPolygon = L.polygon([[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]).addTo(mymap);
+              }).addTo(map);
+              var tempPolygon = L.polygon([[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]).addTo(map);
             }
           }
         }
       });
     });
   });
-});
+}
 
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
