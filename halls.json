@@ -125,8 +125,8 @@
     "Address": "115-131 Lever Street, EC1V 3RH",
     "Latitude": 51.527258,
     "Longitude": -0.094976,
-    "Owned by": "Unite",
-    "Managed by": "Unite",
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
     "Notes": ""
   },
   {
@@ -135,8 +135,8 @@
     "Address": "44-45 Newington Green, London, N16 9QH",
     "Latitude": 51.551981,
     "Longitude": -0.085998,
-    "Owned by": "Santuary Students",
-    "Managed by": "Santuary Students",
+    "Owned by": "Sanctuary Students",
+    "Managed by": "Sanctuary Students",
     "Notes": ""
   },
   {
@@ -145,7 +145,7 @@
     "Address": "8-26 Bath Street, London, EC1V 9DX",
     "Latitude": 51.527896,
     "Longitude": -0.091721,
-    "Owned by": "EC1 Residences Ltd",
+    "Owned by": "EC1 Residences",
     "Managed by": "Derwent FM",
     "Notes": ""
   },
@@ -155,8 +155,8 @@
     "Address": "11 Bastwick Street, London, EC1V 3AQ",
     "Latitude": 51.524762,
     "Longitude": -0.098265,
-    "Owned by": "CRM",
-    "Managed by": "CRM",
+    "Owned by": "CRM Students",
+    "Managed by": "CRM Students",
     "Notes": ""
   },
   {
@@ -455,8 +455,8 @@
     "Address": "46 Thurston Road, London, SE13 7SD",
     "Latitude": 51.466229,
     "Longitude": -0.016769,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": "a subsidary of Greystar Holdings"
   },
   {
@@ -655,8 +655,8 @@
     "Address": "309 Holloway Rd, London N7 9DS",
     "Latitude": 51.553466,
     "Longitude": -0.113255,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -955,9 +955,9 @@
     "Address": "Lebus Street, Tottenham, London N17 9FD",
     "Latitude": 51.589576,
     "Longitude": -0.058375,
-    "Owned by": "UNITE",
-    "Managed by": "UNITE",
-    "Notes": "Unite students?"
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
   },
   {
     "University": "UCL",
@@ -995,9 +995,9 @@
     "Address": "11-13 St Pancras Way, London NW1 0PT",
     "Latitude": 51.5382,
     "Longitude": -0.133512,
-    "Owned by": "UNITE",
-    "Managed by": "UNITE",
-    "Notes": "Unite students?"
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
+    "Notes": ""
   },
   {
     "University": "University of East London",
@@ -1035,8 +1035,8 @@
     "Address": "10 Lovibond Ln, London SE10 9FY",
     "Latitude": "",
     "Longitude": "",
-    "Owned by": "Legal and General",
-    "Managed by": "Legal and General",
+    "Owned by": "Legal and General Ltd",
+    "Managed by": "Legal and General Ltd",
     "Notes": ""
   },
   {
@@ -1305,8 +1305,8 @@
     "Address": "4 Crown Place, RG1 5A",
     "Latitude": 51.449647,
     "Longitude": -0.96283,
-    "Owned by": "Unite",
-    "Managed by": "Unite",
+    "Owned by": "Unite Students",
+    "Managed by": "Unite Students",
     "Notes": "Unite Students?"
   },
   {
@@ -1525,8 +1525,8 @@
     "Address": "200 Pentonville Road, London N1 9JP",
     "Latitude": 51.531103,
     "Longitude": -0.117905,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1535,8 +1535,8 @@
     "Address": "9 Frying Pan Alley, London E1 7HS",
     "Latitude": 51.517965,
     "Longitude": -0.076772,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1545,8 +1545,8 @@
     "Address": "1 Alderson Street, London W10 5JY",
     "Latitude": 51.526543,
     "Longitude": -0.209924,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1555,8 +1555,8 @@
     "Address": "46 Thurston Road, London, SE13 7SD",
     "Latitude": 51.466229,
     "Longitude": -0.016769,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1565,8 +1565,8 @@
     "Address": "46 Thurston Road, London, SE13 7SD",
     "Latitude": 51.466229,
     "Longitude": -0.016769,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1575,8 +1575,8 @@
     "Address": "17 Great Suffolk Street, London SE1 0NS",
     "Latitude": 51.504903,
     "Longitude": -0.101203,
-    "Owned by": "Chapter",
-    "Managed by": "Chapter",
+    "Owned by": "Chapter Living",
+    "Managed by": "Chapter Living",
     "Notes": ""
   },
   {
@@ -1617,106 +1617,6 @@
     "Longitude": -0.101923,
     "Owned by": "Collegiate AC",
     "Managed by": "Collegiate AC",
-    "Notes": "album"
-  },
-  {
-    "University": "The White Stripes",
-    "Hall": 1999,
-    "Address": "-",
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "De Stijl",
-    "Hall": 2000,
-    "Address": "-",
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "White Blood Cells",
-    "Hall": 2001,
-    "Address": 61,
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Elephant",
-    "Hall": 2003,
-    "Address": 6,
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Get Behind Me Satan",
-    "Hall": 2005,
-    "Address": 3,
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Icky Thump",
-    "Hall": 2007,
-    "Address": 2,
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Under Great White Northern Lights",
-    "Hall": 2010,
-    "Address": 11,
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Live in Mississippi",
-    "Hall": 2011,
-    "Address": "-",
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Live at the Gold Dollar",
-    "Hall": 2012,
-    "Address": "-",
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
-    "Notes": ""
-  },
-  {
-    "University": "Nine Miles from the White City",
-    "Hall": 2013,
-    "Address": "-",
-    "Latitude": "",
-    "Longitude": "",
-    "Owned by": "",
-    "Managed by": "",
     "Notes": ""
   }
 ]

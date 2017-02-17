@@ -1,5 +1,5 @@
 {
-  "Unite": {
+  "Unite Students": {
     "Head office address": "The Core, 40 St Thomas Street, Bristol, BS1 6JX",
     "Latitude": 51.449793,
     "Longitude": -2.588861,
@@ -48,7 +48,7 @@
     "Other info - scandals, tax issues etc.": "Registered address is part of Places For People ltd",
     "": ""
   },
-  "CRM": {
+  "CRM Students": {
     "Head office address": "Hanborough House Wallbrook Court, North Hinksey Lane, Botley, Oxfordshire, OX2 0QS",
     "Latitude": 51.752603,
     "Longitude": -1.29241,
@@ -84,9 +84,9 @@
     "": ""
   },
   "Swan Housing Association": {
-    "Head office address": "FIND IT",
-    "Latitude": "",
-    "Longitude": "",
+    "Head office address": "Pilgrim House, High Street, Billericay, CM12 9XY",
+    "Latitude": 51.62323,
+    "Longitude": 0.415536,
     "Other info - scandals, tax issues etc.": "Registered Charity",
     "": ""
   },
@@ -97,12 +97,12 @@
     "Other info - scandals, tax issues etc.": "",
     "": ""
   },
-  "Paragon Student Lets, aka Toaurag Trust": {
+  "Paragon Student Lets": {
     "Head office address": "Bruce Kenrick House, 2 Killick Street, London, N1 9FL",
     "Latitude": 51.531954,
     "Longitude": -0.118145,
     "Other info - scandals, tax issues etc.": "Subsidiary of Notting Hill Housing Group",
-    "": "Address may be wrong"
+    "": "aka Toaurag Trust"
   },
   "Fresh Student Living": {
     "Head office address": "7-9 Swallow Street, London, W1B 4DE",
@@ -147,23 +147,23 @@
     "": ""
   },
   "Legal and General Ltd": {
-    "Head office address": "",
-    "Latitude": "",
-    "Longitude": "",
+    "Head office address": "One Coleman Street, London, EC2R 5AA",
+    "Latitude": 51.517219,
+    "Longitude": -0.08994,
     "Other info - scandals, tax issues etc.": "",
     "": ""
   },
   "BIS (Postal Services Act 2011) Company Ltd": {
-    "Head office address": "",
-    "Latitude": "",
-    "Longitude": "",
+    "Head office address": "Masters House, 107 Hammersmith Road, London, W14 0QH",
+    "Latitude": 51.494591,
+    "Longitude": -0.212131,
     "Other info - scandals, tax issues etc.": "",
     "": ""
   },
   "Carillion": {
-    "Head office address": "",
-    "Latitude": "",
-    "Longitude": "",
+    "Head office address": "Carillion House, 84 Salop Street, Wolverhampton, WV3 0SR, United Kingdom",
+    "Latitude": 52.584006,
+    "Longitude": -2.133798,
     "Other info - scandals, tax issues etc.": "",
     "": ""
   }
