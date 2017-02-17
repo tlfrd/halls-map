@@ -12,16 +12,47 @@ $(document).ready(function () {
   }).addTo(mymap);
 
   loadMap(mymap);
+
 });
 
+function generateControls(universities, map) {
+  var string = "";
+  console.log(universities);
+
+  var arrayLength = universities.length;
+  for (var i = 0; i < arrayLength; i++) {
+    string = string + '<input type="checkbox" name="university" value="' +
+    universities[i] + '"checked>' + universities[i] + '<br>'
+  }
+
+  var info = L.control();
+
+  info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+  };
+
+  info.update = function (props) {
+    this._div.innerHTML = '<h4>Halls Selection</h4>' +
+    '<form action="">' + string + '</form>'
+  };
+
+  info.addTo(map);
+}
+
 function loadMap(map) {
+  var universities = [];
   // remove nested ajax
   $.getJSON("halls.json", function(data) {
     $.getJSON("companies.json", function(companies) {
 
-      console.log(companies);
+      // console.log(companies);
       $.each(data, function(key, val) {
         if (isNumeric(val.Latitude) && isNumeric(val.Longitude)) {
+          if (!_.includes(universities, val.University)) {
+            universities.push(val.University)
+          }
           // companies.(val.)
           var company = companies[val["Owned by"]];
           var tempMarker = L.circle([val.Latitude, val.Longitude], {
@@ -44,6 +75,8 @@ function loadMap(map) {
           }
         }
       });
+
+      generateControls(universities, map);
     });
   });
 }
