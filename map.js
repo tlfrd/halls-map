@@ -23,7 +23,7 @@ var iconGroups = {};
 var hallsOptions = {
   iconShape: 'doughnut',
   borderWidth: 5,
-  borderColor: 'green'
+  borderColor: 'blue'
 }
 
 var companiesOptions = {
@@ -38,7 +38,7 @@ function generateControls(universities, map) {
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '"checked>' + universities[i] + '<br>'
+    universities[i] + '">' + universities[i] + '<br>'
   }
 
   var info = L.control();
@@ -77,6 +77,14 @@ function updateIcons(elem) {
   }
 }
 
+function hideAllIcons() {
+  $.each(iconGroups, function(key, group) {
+    group.eachLayer(function (layer) {
+        mymap.removeLayer(layer);
+    });
+  });
+}
+
 function loadMap(map) {
   var universities = [];
   var uniLayers = {};
@@ -112,9 +120,10 @@ function loadMap(map) {
               }).addTo(map);
 
               companyMarker.bindPopup(val["Owned by"] + "<br/>" + company["Head office address"]);
-              // var tempPolygon = L.polyline(
-              //   [[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]
-              // ).addTo(map);
+              var tempPolygon = L.polyline(
+                [[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]
+              ).addTo(map);
+              uniLayers[val.University].halls.push(tempPolygon);
             }
           }
         }
@@ -125,6 +134,7 @@ function loadMap(map) {
       $("input[name='university']").click(function() {
           updateIcons(this);
       });
+      hideAllIcons();
     });
   });
 }
