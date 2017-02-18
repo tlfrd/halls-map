@@ -1,7 +1,7 @@
 // run with  python -m SimpleHTTPServer
 $(document).ready(function () {
   // initialise map
-  var mymap = L.map('map').setView([51.505, -0.09], 12);
+  mymap = L.map('map').setView([51.505, -0.09], 10);
 
   // var coords = [51.5, -0.09];
   // var marker = L.marker(coords).addTo(mymap);
@@ -15,21 +15,25 @@ $(document).ready(function () {
 
 });
 
+
+var mymap;
+
+var iconGroups = {};
+
 var hallsOptions = {
-  iconShape: 'circle-dot',
+  iconShape: 'doughnut',
   borderWidth: 5,
   borderColor: 'green'
 }
 
 var companiesOptions = {
-  iconShape: 'circle-dot',
+  iconShape: 'doughnut',
   borderWidth: 5,
   borderColor: 'red'
 }
 
 function generateControls(universities, map) {
   var string = "";
-  console.log(universities);
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
@@ -53,8 +57,29 @@ function generateControls(universities, map) {
   info.addTo(map);
 }
 
+function generateGroups(layers) {
+  $.each(layers, function(key, uni) {
+    var uniLayer = L.layerGroup(uni.halls);
+    iconGroups[key] = uniLayer;
+  });
+}
+
+function updateIcons(elem) {
+  var uni = elem.value;
+  if (!elem.checked) {
+    iconGroups[uni].eachLayer(function (layer) {
+        mymap.removeLayer(layer);
+    });
+  } else {
+    iconGroups[uni].eachLayer(function (layer) {
+        mymap.addLayer(layer);
+    });
+  }
+}
+
 function loadMap(map) {
   var universities = [];
+  var uniLayers = {};
   // remove nested ajax
   $.getJSON("halls.json", function(data) {
     $.getJSON("companies.json", function(companies) {
@@ -65,24 +90,41 @@ function loadMap(map) {
           if (!_.includes(universities, val.University)) {
             universities.push(val.University)
           }
-          // companies.(val.)
           var company = companies[val["Owned by"]];
-          var tempMarker = L.marker([val.Latitude, val.Longitude], {
+          var hallMarker = L.marker([val.Latitude, val.Longitude], {
             icon: L.BeautifyIcon.icon(hallsOptions)
           }).addTo(map);
-          tempMarker.bindPopup(val.University + "<br/>" + val.Hall + "<br/>" + val.Address).openPopup();
+          if (uniLayers[val.University]) {
+            if (uniLayers[val.University].halls) {
+              uniLayers[val.University].halls.push(hallMarker);
+            } else {
+              uniLayers[val.University].halls = [hallMarker];
+            }
+          } else {
+            uniLayers[val.University] = {};
+            uniLayers[val.University].halls = [hallMarker];
+          }
+          hallMarker.bindPopup(val.University + "<br/>" + val.Hall + "<br/>" + val.Address);
           if (company) {
             if (isNumeric(company.Latitude) && isNumeric(company.Latitude)) {
-              var tempMarker2 = L.marker([company.Latitude, company.Longitude], {
+              var companyMarker = L.marker([company.Latitude, company.Longitude], {
                 icon: L.BeautifyIcon.icon(companiesOptions)
               }).addTo(map);
-              var tempPolygon = L.polygon([[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]).addTo(map);
+
+              companyMarker.bindPopup(val["Owned by"] + "<br/>" + company["Head office address"]);
+              // var tempPolygon = L.polyline(
+              //   [[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]
+              // ).addTo(map);
             }
           }
         }
       });
 
       generateControls(universities, map);
+      generateGroups(uniLayers);
+      $("input[name='university']").click(function() {
+          updateIcons(this);
+      });
     });
   });
 }
