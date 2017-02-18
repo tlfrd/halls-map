@@ -15,6 +15,18 @@ $(document).ready(function () {
 
 });
 
+var hallsOptions = {
+  iconShape: 'circle-dot',
+  borderWidth: 5,
+  borderColor: 'green'
+}
+
+var companiesOptions = {
+  iconShape: 'circle-dot',
+  borderWidth: 5,
+  borderColor: 'red'
+}
+
 function generateControls(universities, map) {
   var string = "";
   console.log(universities);
@@ -55,20 +67,14 @@ function loadMap(map) {
           }
           // companies.(val.)
           var company = companies[val["Owned by"]];
-          var tempMarker = L.circle([val.Latitude, val.Longitude], {
-              color: 'red',
-              fillColor: 'red',
-              fillOpacity: 0.5,
-              radius: 100
+          var tempMarker = L.marker([val.Latitude, val.Longitude], {
+            icon: L.BeautifyIcon.icon(hallsOptions)
           }).addTo(map);
           tempMarker.bindPopup(val.University + "<br/>" + val.Hall + "<br/>" + val.Address).openPopup();
           if (company) {
             if (isNumeric(company.Latitude) && isNumeric(company.Latitude)) {
-              var tempMarker2 = L.circle([company.Latitude, company.Longitude], {
-                  color: 'blue',
-                  fillColor: 'blue',
-                  fillOpacity: 0.5,
-                  radius: 100
+              var tempMarker2 = L.marker([company.Latitude, company.Longitude], {
+                icon: L.BeautifyIcon.icon(companiesOptions)
               }).addTo(map);
               var tempPolygon = L.polygon([[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]).addTo(map);
             }
