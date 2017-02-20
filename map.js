@@ -45,16 +45,22 @@ function generateControls(universities, map) {
 }
 
 // add to object of universities and their halls
-function addToUniHallsList(uniLayers, hall, halls, hallMarker) {
-  if (uniLayers[hall.University]) {
-    if (uniLayers[hall.University].halls) {
-      uniLayers[hall.University].halls.push(hallMarker);
-    } else {
-      uniLayers[hall.University].halls = [hallMarker];
-    }
+function addToUnisWithHalls(unisWithHalls, hall, hallMarker) {
+  if (unisWithHalls[hall.University]) {
+    unisWithHalls[hall.University].halls.push(hallMarker);
   } else {
-    uniLayers[hall.University] = {};
-    uniLayers[hall.University].halls = [hallMarker];
+    unisWithHalls[hall.University] = {};
+    unisWithHalls[hall.University].halls = [hallMarker];
+  }
+}
+
+function addToCompaniesWithHalls(companyWithHalls, hall, hallMarker) {
+  var company = hall["Owned by"];
+  if (companyWithHalls[company]) {
+    companyWithHalls[company].halls.push(hallMarker);
+  } else {
+    companyWithHalls[company] = {};
+    companyWithHalls[company].halls = [hallMarker];
   }
 }
 
@@ -99,7 +105,10 @@ function isCoordinates(coord) {
 // given a leaftlet map, loads json and displays data
 function loadMap(map) {
   var universities = [];
+  var companiesSeen = [];
   var unisWithHalls = {};
+  var companiesWithHalls = {};
+
   // remove nested ajax
   $.getJSON("halls.json", function(halls) {
     $.getJSON("companies.json", function(companies) {
@@ -107,9 +116,8 @@ function loadMap(map) {
         // get company hall is owned by
         var company = companies[hall["Owned by"]];
         var uniLatLong = [hall.Latitude, hall.Longitude];
-        var companyLatLong = [company.Latitude, company.Longitude];
 
-        if (isCoordinates(uniLatLong) {
+        if (isCoordinates(uniLatLong)) {
           // add universities to array
           if (!_.includes(universities, hall.University)) {
             universities.push(hall.University)
@@ -121,18 +129,25 @@ function loadMap(map) {
           });
           hallMarker.bindPopup(hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address);
 
-          // add hall marker to univerity with halls objects
-          addToUniHallsList(uniWithHalls, hall, halls, hallMarker);
+          // add hall marker to univerity with halls object
+          addToUnisWithHalls(unisWithHalls, hall, hallMarker);
 
           // if privately owned, display company
-          // REFACTOR SO NO DUPLICATES OF COMPANY ICONS
           if (company) {
+            // add hall marker to company with halls object
+            addToCompaniesWithHalls(companiesWithHalls, hall, hallMarker);
+
+            var companyLatLong = [company.Latitude, company.Longitude];
             if (isCoordinates(companyLatLong)) {
-              // create company marker
-              var companyMarker = L.marker(companyLatLong, {
-                icon: L.BeautifyIcon.icon(companiesOptions)
-              }).addTo(map);
-              companyMarker.bindPopup(val["Owned by"] + "<br/>" + company["Head office address"]);
+
+              if (!_.includes(companiesSeen, hall["Owned by"])) {
+                companiesSeen.push(hall["Owned by"]);
+                // create company marker
+                var companyMarker = L.marker(companyLatLong, {
+                  icon: L.BeautifyIcon.icon(companiesOptions)
+                }).addTo(map);
+                companyMarker.bindPopup(hall["Owned by"] + "<br/>" + company["Head office address"]);
+              }
 
               // create line between company and hall
               var tempPolygon = L.polyline(
@@ -145,9 +160,9 @@ function loadMap(map) {
           }
         }
       });
-
+      // console.log(companiesSeen);
       generateControls(universities, map);
-      generateGroups(uniWithHalls);
+      generateGroups(unisWithHalls);
       $("input[name='university']").click(function() {
           updateIcons(this);
       });
