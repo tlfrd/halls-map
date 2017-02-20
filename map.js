@@ -1,22 +1,9 @@
 // run with  python -m SimpleHTTPServer
-$(document).ready(function () {
-  // initialise map
-  mymap = L.map('map').setView([51.505, -0.09], 10);
-
-  // var coords = [51.5, -0.09];
-  // var marker = L.marker(coords).addTo(mymap);
-
-  // add tile layer to map
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(mymap);
-
-  loadMap(mymap);
-
-});
-
 
 var mymap;
+
+var initLatLong = [51.505, -0.09];
+var zoomLevel = 10;
 
 var iconGroups = {};
 
@@ -57,6 +44,21 @@ function generateControls(universities, map) {
   info.addTo(map);
 }
 
+// add to object of universities and their halls
+function addToUniHallsList(uniLayers, hall, halls, hallMarker) {
+  if (uniLayers[hall.University]) {
+    if (uniLayers[hall.University].halls) {
+      uniLayers[hall.University].halls.push(hallMarker);
+    } else {
+      uniLayers[hall.University].halls = [hallMarker];
+    }
+  } else {
+    uniLayers[hall.University] = {};
+    uniLayers[hall.University].halls = [hallMarker];
+  }
+}
+
+// generate groups from object of universities and their halls
 function generateGroups(layers) {
   $.each(layers, function(key, uni) {
     var uniLayer = L.layerGroup(uni.halls);
@@ -64,6 +66,7 @@ function generateGroups(layers) {
   });
 }
 
+// adds and removes icons from controls
 function updateIcons(elem) {
   var uni = elem.value;
   if (!elem.checked) {
@@ -85,52 +88,66 @@ function hideAllIcons() {
   });
 }
 
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function isCoordinates(coord) {
+  return isNumeric(coord[0]) && isNumeric(coord[1]);
+}
+
+// given a leaftlet map, loads json and displays data
 function loadMap(map) {
   var universities = [];
-  var uniLayers = {};
+  var unisWithHalls = {};
   // remove nested ajax
-  $.getJSON("halls.json", function(data) {
+  $.getJSON("halls.json", function(halls) {
     $.getJSON("companies.json", function(companies) {
+      $.each(halls, function(key, hall) {
+        // get company hall is owned by
+        var company = companies[hall["Owned by"]];
+        var uniLatLong = [hall.Latitude, hall.Longitude];
+        var companyLatLong = [company.Latitude, company.Longitude];
 
-      // console.log(companies);
-      $.each(data, function(key, val) {
-        if (isNumeric(val.Latitude) && isNumeric(val.Longitude)) {
-          if (!_.includes(universities, val.University)) {
-            universities.push(val.University)
+        if (isCoordinates(uniLatLong) {
+          // add universities to array
+          if (!_.includes(universities, hall.University)) {
+            universities.push(hall.University)
           }
-          var company = companies[val["Owned by"]];
-          var hallMarker = L.marker([val.Latitude, val.Longitude], {
+
+          // create hall marker
+          var hallMarker = L.marker(uniLatLong, {
             icon: L.BeautifyIcon.icon(hallsOptions)
-          }).addTo(map);
-          if (uniLayers[val.University]) {
-            if (uniLayers[val.University].halls) {
-              uniLayers[val.University].halls.push(hallMarker);
-            } else {
-              uniLayers[val.University].halls = [hallMarker];
-            }
-          } else {
-            uniLayers[val.University] = {};
-            uniLayers[val.University].halls = [hallMarker];
-          }
-          hallMarker.bindPopup(val.University + "<br/>" + val.Hall + "<br/>" + val.Address);
+          });
+          hallMarker.bindPopup(hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address);
+
+          // add hall marker to univerity with halls objects
+          addToUniHallsList(uniWithHalls, hall, halls, hallMarker);
+
+          // if privately owned, display company
+          // REFACTOR SO NO DUPLICATES OF COMPANY ICONS
           if (company) {
-            if (isNumeric(company.Latitude) && isNumeric(company.Latitude)) {
-              var companyMarker = L.marker([company.Latitude, company.Longitude], {
+            if (isCoordinates(companyLatLong)) {
+              // create company marker
+              var companyMarker = L.marker(companyLatLong, {
                 icon: L.BeautifyIcon.icon(companiesOptions)
               }).addTo(map);
-
               companyMarker.bindPopup(val["Owned by"] + "<br/>" + company["Head office address"]);
+
+              // create line between company and hall
               var tempPolygon = L.polyline(
-                [[val.Latitude, val.Longitude], [company.Latitude, company.Longitude]]
+                [uniLatLong, [company.Latitude, company.Longitude]]
               ).addTo(map);
-              uniLayers[val.University].halls.push(tempPolygon);
+
+              // add line to university hall structure
+              unisWithHalls[hall.University].halls.push(tempPolygon);
             }
           }
         }
       });
 
       generateControls(universities, map);
-      generateGroups(uniLayers);
+      generateGroups(uniWithHalls);
       $("input[name='university']").click(function() {
           updateIcons(this);
       });
@@ -139,6 +156,15 @@ function loadMap(map) {
   });
 }
 
-function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
+$(document).ready(function () {
+  // initialise map
+  mymap = L.map('map').setView(initLatLong, zoomLevel);
+
+  // add tile layer to map
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(mymap);
+
+  loadMap(mymap);
+
+});
