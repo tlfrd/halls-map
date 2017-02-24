@@ -201,10 +201,16 @@ function loadMap(map) {
               if (hall["Owned by"] === "University") {
                 // console.log(hall.University);
                 var uniCampus = uni_map_data[hall.University];
-                var tempPolygon = L.polyline(
+                var uniPolyline = L.polyline(
                   [uniLatLong, [uniCampus.Latitude, uniCampus.Longitude]]
                 );
-                addToUnisWithHalls(unisWithHalls, hall, tempPolygon, "uni-lines");
+                var decorator = L.polylineDecorator(uniPolyline, {
+                    patterns: [
+                        // defines a pattern of 10px-wide dashes, repeated every 20px on the line
+                        {offset: 0, repeat: 20, symbol: L.Symbol.dash({pixelSize: 10})}
+                    ]
+                });
+                addToUnisWithHalls(unisWithHalls, hall, decorator, "uni-lines");
               }
             }
           }
