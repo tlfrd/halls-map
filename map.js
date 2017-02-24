@@ -6,6 +6,9 @@ var initLatLong = [51.505, -0.09];
 var zoomLevel = 10;
 
 var iconGroups = {};
+var companyIconGroups = {};
+
+var displayedLines = {};
 
 var hallsOptions = {
   iconShape: 'doughnut',
@@ -74,8 +77,18 @@ function addToCompaniesWithHalls(companyWithHalls, hall, hallMarker) {
   }
 }
 
+function showCompanyLinks(company, companiesWithHalls) {
+  companyIconGroups[company].eachLayer(function (layer) {
+    if (mymap.hasLayer(layer) && !displayedLines[layer._leaflet_id]) {
+      mymap.removeLayer(layer);
+    } else {
+      mymap.addLayer(layer);
+    }
+  });
+}
+
 // generate groups from object of universities and their halls
-function generateGroups(layers) {
+function generateLayerGroups(layers) {
   $.each(layers, function(key, uni) {
     var uniHallsLayer = L.layerGroup(uni["halls"]);
     var uniLinesLayer = L.layerGroup(uni["lines"]);
@@ -88,15 +101,23 @@ function generateGroups(layers) {
   });
 }
 
+function generateCompanyGroups(companiesWithHalls) {
+  $.each(companiesWithHalls, function(key, company) {
+    companyIconGroups[key] = L.layerGroup(company.halls);
+  });
+}
+
 // adds and removes icons from controls
 function updateIcons(elem) {
   var uni = elem.value;
   if (!elem.checked) {
     iconGroups[uni]["lines"].eachLayer(function (layer) {
         mymap.removeLayer(layer);
+        delete displayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["uni-lines"].eachLayer(function (layer) {
         mymap.removeLayer(layer);
+        delete displayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
         layer._icon.style.borderColor = "#b2b2ff";
@@ -104,22 +125,16 @@ function updateIcons(elem) {
   } else {
     iconGroups[uni]["lines"].eachLayer(function (layer) {
         mymap.addLayer(layer);
+        displayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["uni-lines"].eachLayer(function (layer) {
         mymap.addLayer(layer);
+        displayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
         layer._icon.style.borderColor = "#0000FF";
     });
   }
-}
-
-function hideAllIcons() {
-  $.each(iconGroups, function(key, group) {
-    group.eachLayer(function (layer) {
-        mymap.removeLayer(layer);
-    });
-  });
 }
 
 function isNumeric(n) {
@@ -173,8 +188,6 @@ function loadMap(map) {
 
             // if privately owned, display company
             if (company) {
-              // add hall marker to company with halls object
-              addToCompaniesWithHalls(companiesWithHalls, hall, hallMarker);
 
               var companyLatLong = [company.Latitude, company.Longitude];
               if (isCoordinates(companyLatLong)) {
@@ -184,7 +197,10 @@ function loadMap(map) {
                   // create company marker
                   var companyMarker = L.marker(companyLatLong, {
                     icon: L.BeautifyIcon.icon(companiesOptions)
-                  }).addTo(map);
+                  }).on('click', function() {
+                    showCompanyLinks(hall["Owned by"], companiesWithHalls);
+                  });
+                  companyMarker.addTo(map);
                   companyMarker.bindPopup(hall["Owned by"] + "<br/>" + company["Head office address"]);
                 }
 
@@ -195,6 +211,8 @@ function loadMap(map) {
 
                 // add line to university hall structure
                 addToUnisWithHalls(unisWithHalls, hall, tempPolygon, "lines");
+                // add hall marker to company with halls object
+                addToCompaniesWithHalls(companiesWithHalls, hall, tempPolygon);
               }
             } else {
               // console.log(hall["Owned by"]);
@@ -217,11 +235,11 @@ function loadMap(map) {
         });
         // console.log(companiesSeen);
         generateControls(universities, map);
-        generateGroups(unisWithHalls);
+        generateLayerGroups(unisWithHalls);
+        generateCompanyGroups(companiesWithHalls);
         $("input[name='university']").click(function() {
             updateIcons(this);
         });
-      // hideAllIcons();
       });
     });
   });
