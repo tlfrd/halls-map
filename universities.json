@@ -1,0 +1,87 @@
+{
+  "Brunel": {
+    "Address": "Kingston Ln, London, Uxbridge UB8 3PH",
+    "Latitude": 51.531922,
+    "Longitude": -0.466417
+  },
+  "City": {
+    "Address": "Northampton Square, London EC1V 0HB",
+    "Latitude": 51.527082,
+    "Longitude": -0.102717
+  },
+  "Goldsmiths": {
+    "Address": "8 Lewisham Way, New Cross, London SE14 6NW",
+    "Latitude": 51.474384,
+    "Longitude": -0.036074
+  },
+  "King's": {
+    "Address": "King's College London, Strand, London WC2R 2LS",
+    "Latitude": 51.511486,
+    "Longitude": -0.115997
+  },
+  "Kingston": {
+    "Address": "Penrhyn Rd, Kingston upon Thames KT1 2EE",
+    "Latitude": 51.403611,
+    "Longitude": -0.304349
+  },
+  "London South Bank": {
+    "Address": "103 Borough Rd, London SE1 0AA",
+    "Latitude": 51.498651,
+    "Longitude": -0.10168
+  },
+  "SOAS": {
+    "Address": "London WC1H 0XG",
+    "Latitude": 51.52235,
+    "Longitude": -0.129259
+  },
+  "St. George's": {
+    "Address": "Cranmer Terrace, London SW17 0RE",
+    "Latitude": 51.427829,
+    "Longitude": -0.175829
+  },
+  "UCL": {
+    "Address": "Gower St, Kings Cross, London WC1E 6BT",
+    "Latitude": 51.52447,
+    "Longitude": -0.134784
+  },
+  "University of Greenwich": {
+    "Address": "Old Royal Naval College, 30 Park Row, London SE10 9LS",
+    "Latitude": 51.482565,
+    "Longitude": -0.006758
+  },
+  "University of Roehampton": {
+    "Address": "Erasmus House, Roehampton Ln, London SW15 5PU",
+    "Latitude": 51.457366,
+    "Longitude": -0.245346
+  },
+  "University of Westminster": {
+    "Address": "309 Regent St, Marylebone, London W1B 2UW",
+    "Latitude": 51.516706,
+    "Longitude": -0.142555
+  },
+  "University of West London": {
+    "Address": "St Mary's Rd, London W5 5RF",
+    "Latitude": 51.506306,
+    "Longitude": -0.305176
+  },
+  "UoL Halls": {
+    "Address": "University of London, Senate House, Malet Street, London WC1E 7HU",
+    "Latitude": 51.521074,
+    "Longitude": -0.128735
+  },
+  "Imperial": {
+    "Address": "Imperial College London, Kensington, London SW7 2AZ",
+    "Latitude": 51.4988,
+    "Longitude": -0.174877
+  },
+  "Royal Holloway": {
+    "Address": "Egham Hill, Egham TW20 0EX",
+    "Latitude": 51.425673,
+    "Longitude": -0.563063
+  },
+  "LSE": {
+    "Address": "Houghton St, London WC2A 2AE",
+    "Latitude": 51.513499,
+    "Longitude": -0.116733
+  }
+}
