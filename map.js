@@ -8,7 +8,9 @@ var zoomLevel = 10;
 var iconGroups = {};
 var companyIconGroups = {};
 
-var displayedLines = {};
+var uniDisplayedLines = {};
+var companyDisplayedLines = {};
+var highlightedIcons = {};
 
 var hallsOptions = {
   iconShape: 'doughnut',
@@ -67,22 +69,41 @@ function addToUnisWithHalls(unisWithHalls, hall, hallMarker, type) {
   }
 }
 
-function addToCompaniesWithHalls(companyWithHalls, hall, hallMarker) {
+function addToCompaniesWithHalls(companyWithHalls, hall, hallMarker, type) {
   var company = hall["Owned by"];
   if (companyWithHalls[company]) {
-    companyWithHalls[company].halls.push(hallMarker);
+    if (companyWithHalls[company][type]){
+      companyWithHalls[company][type].push(hallMarker);
+    } else {
+      companyWithHalls[company][type] = [hallMarker];
+    }
   } else {
     companyWithHalls[company] = {};
-    companyWithHalls[company].halls = [hallMarker];
+    companyWithHalls[company][type] = [hallMarker];
   }
 }
 
-function showCompanyLinks(company, companiesWithHalls) {
-  companyIconGroups[company].eachLayer(function (layer) {
-    if (mymap.hasLayer(layer) && !displayedLines[layer._leaflet_id]) {
+function showCompanyLinks(company) {
+  companyIconGroups[company]["lines"].eachLayer(function (layer) {
+    if (mymap.hasLayer(layer) && !uniDisplayedLines[layer._leaflet_id]) {
       mymap.removeLayer(layer);
+      delete companyDisplayedLines[layer._leaflet_id];
     } else {
       mymap.addLayer(layer);
+      companyDisplayedLines[layer._leaflet_id] = layer;
+    }
+  });
+  // refactor out colour variable strings
+  companyIconGroups[company]["halls"].eachLayer(function (layer) {
+    if (!highlightedIcons[layer._leaflet_id]) {
+      // if already highlighted
+      if (layer._icon.style.borderColor == "rgb(0, 0, 255)") {
+        // remove highlight
+        layer._icon.style.borderColor = "rgb(178, 178, 255)";
+      } else {
+        // otherwise add highlight
+        layer._icon.style.borderColor = "rgb(0, 0, 255)";
+      }
     }
   });
 }
@@ -101,10 +122,17 @@ function generateLayerGroups(layers) {
   });
 }
 
+// generate groups from object of companies and their halls
 function generateCompanyGroups(companiesWithHalls) {
   $.each(companiesWithHalls, function(key, company) {
-    companyIconGroups[key] = L.layerGroup(company.halls);
+    var companyHallsLayer = L.layerGroup(company["halls"]);
+    var companyLinesLayer = L.layerGroup(company["lines"]);
+    var companyLayer = {};
+    companyLayer["halls"] = companyHallsLayer;
+    companyLayer["lines"] = companyLinesLayer;
+    companyIconGroups[key] = companyLayer;
   });
+  console.log(companyIconGroups);
 }
 
 // adds and removes icons from controls
@@ -112,27 +140,31 @@ function updateIcons(elem) {
   var uni = elem.value;
   if (!elem.checked) {
     iconGroups[uni]["lines"].eachLayer(function (layer) {
-        mymap.removeLayer(layer);
-        delete displayedLines[layer._leaflet_id];
+        if (!companyDisplayedLines[layer._leaflet_id]) {
+          mymap.removeLayer(layer);
+        }
+        delete uniDisplayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["uni-lines"].eachLayer(function (layer) {
         mymap.removeLayer(layer);
-        delete displayedLines[layer._leaflet_id];
+        delete uniDisplayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
         layer._icon.style.borderColor = "#b2b2ff";
+        highlightedIcons[layer._leaflet_id] = layer;
     });
   } else {
     iconGroups[uni]["lines"].eachLayer(function (layer) {
         mymap.addLayer(layer);
-        displayedLines[layer._leaflet_id] = layer;
+        uniDisplayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["uni-lines"].eachLayer(function (layer) {
         mymap.addLayer(layer);
-        displayedLines[layer._leaflet_id] = layer;
+        uniDisplayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
         layer._icon.style.borderColor = "#0000FF";
+        delete highlightedIcons[layer._leaflet_id];
     });
   }
 }
@@ -198,7 +230,7 @@ function loadMap(map) {
                   var companyMarker = L.marker(companyLatLong, {
                     icon: L.BeautifyIcon.icon(companiesOptions)
                   }).on('click', function() {
-                    showCompanyLinks(hall["Owned by"], companiesWithHalls);
+                    showCompanyLinks(hall["Owned by"]);
                   });
                   companyMarker.addTo(map);
                   companyMarker.bindPopup(hall["Owned by"] + "<br/>" + company["Head office address"]);
@@ -212,7 +244,8 @@ function loadMap(map) {
                 // add line to university hall structure
                 addToUnisWithHalls(unisWithHalls, hall, tempPolygon, "lines");
                 // add hall marker to company with halls object
-                addToCompaniesWithHalls(companiesWithHalls, hall, tempPolygon);
+                addToCompaniesWithHalls(companiesWithHalls, hall, tempPolygon, "lines");
+                addToCompaniesWithHalls(companiesWithHalls, hall, hallMarker, "halls");
               }
             } else {
               // console.log(hall["Owned by"]);
