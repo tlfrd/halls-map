@@ -3,7 +3,7 @@
 var mymap;
 
 var initLatLong = [51.505, -0.09];
-var zoomLevel = 10;
+var zoomLevel = 10.5;
 
 var iconGroups = {};
 var companyIconGroups = {};
@@ -57,6 +57,10 @@ function addKey(map) {
 }
 
 function generateControls(universities, map) {
+  console.log(universities);
+  universities = _.sortBy(universities);
+  console.log(universities);
+
   var string = "";
 
   var arrayLength = universities.length;
