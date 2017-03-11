@@ -3,40 +3,74 @@ body {
   padding: 0px;
 }
 
+
+#info-panel {
+  height: 12vh;
+  border-bottom: 1px solid black;
+}
+
+#map {
+  height: 82vh;
+}
+
 #logo {
   padding-top: 20px;
+  text-align: center;
 }
 
 #logo img {
-  width: 17vw;
+  width: 50vw;
 }
 
-#info-panel {
+#copyright-mobile {
+  height: 5vh;
   text-align: center;
-  height: 100vh;
-  width: 19vw;
-  padding-left: 1vw;
-  float: left;
+  padding: 2vh;
+  border-top: 1px solid black;
 }
 
-#copyright {
-  position: absolute;
-  width: 17vw;
-  bottom: 0px;
-  font-size: 11px;
-  padding-left: 2vw;
+#copyright-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #info-panel {
+    text-align: center;
+    height: 100vh;
+    width: 19vw;
+    padding-left: 1vw;
+    float: left;
+    border-bottom: 0px;
+  }
+
+  #map {
+    height: 100vh;
+    width: 80vw;
+    float: right;
+    display: block;
+    border-left: 1px solid black;
+  }
+
+  #logo img {
+    width: 17vw;
+  }
+
+  #copyright-desktop {
+    display: block;
+    position: absolute;
+    width: 17vw;
+    bottom: 0px;
+    font-size: 11px;
+    padding-left: 2vw;
+  }
+
+  #copyright-mobile {
+    display: none;
+  }
 }
 
 .circle-left-padding {
   padding-left: 10px;
-}
-
-#map {
-  height: 100vh;
-  width: 80vw;
-  float: right;
-  display: block;
-  border-left: 1px solid black;
 }
 
 .info {

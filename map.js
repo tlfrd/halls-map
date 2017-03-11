@@ -127,12 +127,12 @@ function showCompanyLinks(company) {
   companyIconGroups[company]["halls"].eachLayer(function (layer) {
     if (!highlightedIcons[layer._leaflet_id]) {
       // if already highlighted
-      if (layer._icon.style.borderColor == "rgb(0, 0, 255)") {
+      if (layer._icon.style.borderColor == hallsHiglightedColour) {
         // remove highlight
-        layer._icon.style.borderColor = "rgb(178, 178, 255)";
+        layer._icon.style.borderColor = hallsColour;
       } else {
         // otherwise add highlight
-        layer._icon.style.borderColor = "rgb(0, 0, 255)";
+        layer._icon.style.borderColor = hallsHiglightedColour;
       }
     }
   });
