@@ -9,8 +9,16 @@ body {
   border-bottom: 1px solid black;
 }
 
+#halls-selection {
+  display: none;
+}
+
+.drop-control {
+  text-align: center;
+}
+
 #map {
-  height: 82vh;
+  height: 78vh;
 }
 
 #logo {
@@ -23,14 +31,28 @@ body {
 }
 
 #copyright-mobile {
-  height: 5vh;
+  height: 3vh;
   text-align: center;
+  font-size: 10px;
   padding: 2vh;
   border-top: 1px solid black;
 }
 
 #copyright-desktop {
   display: none;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 10px/12px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid black;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
 }
 
 @media only screen and (min-width: 768px) {
@@ -41,6 +63,14 @@ body {
     padding-left: 1vw;
     float: left;
     border-bottom: 0px;
+  }
+
+  .drop-control {
+    display: none;
+  }
+
+  #halls-selection {
+    display: block;
   }
 
   #map {
@@ -67,21 +97,12 @@ body {
   #copyright-mobile {
     display: none;
   }
+
+  .info {
+      font: 14px/16px Arial, Helvetica, sans-serif;
+  }
 }
 
 .circle-left-padding {
   padding-left: 10px;
-}
-
-.info {
-    padding: 6px 8px;
-    font: 14px/16px Arial, Helvetica, sans-serif;
-    background: white;
-    background: rgba(255,255,255,0.8);
-    border: 1px solid black;
-}
-
-.info h4 {
-    margin: 0 0 5px;
-    color: #777;
 }

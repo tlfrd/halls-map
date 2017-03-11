@@ -5,6 +5,8 @@ var mymap;
 var initLatLong = [51.505, -0.09];
 var zoomLevel = 10.5;
 
+var drop_control_up = false;
+
 var iconGroups = {};
 var companyIconGroups = {};
 
@@ -79,7 +81,8 @@ function generateControls(universities, map) {
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>Halls Selection</h4>' +
-    '<form action="">' + string + '</form>'
+    '<h5 class="drop-control">Display Menu <i class="fa fa-caret-down" aria-hidden="true"></i></h5>' +
+    '<form id="halls-selection" action="">' + string + '</form>'
   };
 
   info.addTo(map);
@@ -303,6 +306,18 @@ function loadMap(map) {
         generateCompanyGroups(companiesWithHalls);
         $("input[name='university']").click(function() {
             updateIcons(this);
+        });
+
+        $(".drop-control").click(function() {
+            if (drop_control_up === false) {
+              $("#halls-selection").show();
+              $(".drop-control").html('Hide Menu <i class="fa fa-chevron-up" aria-hidden="true"></i>');
+              drop_control_up = true;
+            } else {
+              $("#halls-selection").hide();
+              $(".drop-control").html('Show Menu <i class="fa fa-chevron-down" aria-hidden="true"></i>');
+              drop_control_up = false;
+            }
         });
       });
     });
