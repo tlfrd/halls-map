@@ -12,22 +12,48 @@ var uniDisplayedLines = {};
 var companyDisplayedLines = {};
 var highlightedIcons = {};
 
+var hallsColour = '#b2b2ff';
+var hallsHiglightedColour = "#0000FF";
+var companiesColour = 'red';
+var unisColour = 'black';
+
 var hallsOptions = {
-  iconShape: 'doughnut',
-  borderWidth: 5,
-  borderColor: '#b2b2ff'
+  iconShape: 'circle-dot',
+  borderWidth: 7,
+  borderColor: hallsColour
 }
 
 var companiesOptions = {
-  iconShape: 'doughnut',
-  borderWidth: 5,
+  iconShape: 'circle-dot',
+  borderWidth: 7,
   borderColor: 'red'
 }
 
 var unisOptions = {
-  iconShape: 'doughnut',
-  borderWidth: 5,
+  iconShape: 'circle-dot',
+  borderWidth: 7,
   borderColor: 'black'
+}
+
+function addKey(map) {
+  var keyUI = L.control({position: 'topleft'});
+
+  keyUI.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info');
+    this.update();
+    return this._div;
+  };
+
+  keyUI.update = function (props) {
+    this._div.innerHTML = '<h4>Key</h4>' +
+    '<table>' +
+    '<tr><td><b>Halls:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
+    '<tr><td><b>Universities:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
+    '<tr><td><b>Companies:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
+    '</table>'
+  };
+
+  keyUI.addTo(map);
 }
 
 function generateControls(universities, map) {
@@ -268,6 +294,7 @@ function loadMap(map) {
         });
         // console.log(companiesSeen);
         generateControls(universities, map);
+        addKey(map)
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
         $("input[name='university']").click(function() {
@@ -285,8 +312,12 @@ $(document).ready(function () {
   // add tile layer to map
   // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   //   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGxmcmQiLCJhIjoiY2lyZzR0dms1MDAwd2o3bTU4OWM4bG5sbiJ9.GtEjgTigzfBM-2J9x2Gf0w', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+  	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  	subdomains: 'abcd',
+  	minZoom: 0,
+  	maxZoom: 20,
+  	ext: 'png'
   }).addTo(mymap);
 
   loadMap(mymap);

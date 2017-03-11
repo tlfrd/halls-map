@@ -3,10 +3,40 @@ body {
   padding: 0px;
 }
 
+#logo {
+  padding-top: 20px;
+}
+
+#logo img {
+  width: 17vw;
+}
+
+#info-panel {
+  text-align: center;
+  height: 100vh;
+  width: 19vw;
+  padding-left: 1vw;
+  float: left;
+}
+
+#copyright {
+  position: absolute;
+  width: 17vw;
+  bottom: 0px;
+  font-size: 11px;
+  padding-left: 2vw;
+}
+
+.circle-left-padding {
+  padding-left: 10px;
+}
+
 #map {
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
+  float: right;
   display: block;
+  border-left: 1px solid black;
 }
 
 .info {
@@ -14,9 +44,9 @@ body {
     font: 14px/16px Arial, Helvetica, sans-serif;
     background: white;
     background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
+    border: 1px solid black;
 }
+
 .info h4 {
     margin: 0 0 5px;
     color: #777;
