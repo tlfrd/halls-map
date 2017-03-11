@@ -14,10 +14,10 @@ var uniDisplayedLines = {};
 var companyDisplayedLines = {};
 var highlightedIcons = {};
 
-var hallsColour = '#b2b2ff';
-var hallsHiglightedColour = "#0000FF";
-var companiesColour = 'red';
-var unisColour = 'black';
+var hallsColour = '#e80000';
+var hallsHiglightedColour = '#ff9a9a';
+var companiesColour = 'black';
+var unisColour = '#0074e8';
 
 var hallsOptions = {
   iconShape: 'circle-dot',
@@ -28,13 +28,13 @@ var hallsOptions = {
 var companiesOptions = {
   iconShape: 'circle-dot',
   borderWidth: 7,
-  borderColor: 'red'
+  borderColor: companiesColour
 }
 
 var unisOptions = {
   iconShape: 'circle-dot',
   borderWidth: 7,
-  borderColor: 'black'
+  borderColor:  unisColour
 }
 
 function addKey(map) {
@@ -183,7 +183,7 @@ function updateIcons(elem) {
         delete uniDisplayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
-        layer._icon.style.borderColor = "#b2b2ff";
+        layer._icon.style.borderColor = hallsColour;
         highlightedIcons[layer._leaflet_id] = layer;
     });
   } else {
@@ -196,7 +196,7 @@ function updateIcons(elem) {
         uniDisplayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
-        layer._icon.style.borderColor = "#0000FF";
+        layer._icon.style.borderColor = hallsHiglightedColour;
         delete highlightedIcons[layer._leaflet_id];
     });
   }

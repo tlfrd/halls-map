@@ -3,9 +3,8 @@ body {
   padding: 0px;
 }
 
-
 #info-panel {
-  height: 12vh;
+  height: 10vh;
   border-bottom: 1px solid black;
 }
 
@@ -18,11 +17,11 @@ body {
 }
 
 #map {
-  height: 78vh;
+  height: 77vh;
 }
 
 #logo {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
 
