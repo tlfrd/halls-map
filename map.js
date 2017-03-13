@@ -12,10 +12,11 @@ var companyIconGroups = {};
 
 var uniDisplayedLines = {};
 var companyDisplayedLines = {};
-var highlightedIcons = {};
+var uniHighlightedIcons = {};
+var companyHighlightedIcons = {};
 
-var hallsColour = '#e80000';
-var hallsHiglightedColour = '#ff9a9a';
+var hallsColour = 'rgb(232, 0, 0)';
+var hallsHiglightedColour = 'rgb(255, 154, 154)';
 var companiesColour = 'black';
 var unisColour = '#0074e8';
 
@@ -59,9 +60,8 @@ function addKey(map) {
 }
 
 function generateControls(universities, map) {
-  console.log(universities);
+  // sort universities alphabetically
   universities = _.sortBy(universities);
-  console.log(universities);
 
   var string = "";
 
@@ -118,25 +118,29 @@ function addToCompaniesWithHalls(companyWithHalls, hall, hallMarker, type) {
 
 function showCompanyLinks(company) {
   companyIconGroups[company]["lines"].eachLayer(function (layer) {
-    if (mymap.hasLayer(layer) && !uniDisplayedLines[layer._leaflet_id]) {
-      mymap.removeLayer(layer);
+    // if the lines are on the map
+    if (mymap.hasLayer(layer)) {
+      // check if not added by University and then remove
+      if (!uniDisplayedLines[layer._leaflet_id]) {
+        mymap.removeLayer(layer);
+      }
       delete companyDisplayedLines[layer._leaflet_id];
     } else {
       mymap.addLayer(layer);
       companyDisplayedLines[layer._leaflet_id] = layer;
     }
   });
-  // refactor out colour variable strings
   companyIconGroups[company]["halls"].eachLayer(function (layer) {
-    if (!highlightedIcons[layer._leaflet_id]) {
-      // if already highlighted
-      if (layer._icon.style.borderColor == hallsHiglightedColour) {
-        // remove highlight
+    // if highlighted by company
+    if (companyHighlightedIcons[layer._leaflet_id]) {
+      // if not highlighted by uni
+      if (!uniHighlightedIcons[layer._leaflet_id]) {
         layer._icon.style.borderColor = hallsColour;
-      } else {
-        // otherwise add highlight
-        layer._icon.style.borderColor = hallsHiglightedColour;
       }
+      delete companyHighlightedIcons[layer._leaflet_id];
+    } else {
+      companyHighlightedIcons[layer._leaflet_id] = layer;
+      layer._icon.style.borderColor = hallsHiglightedColour;
     }
   });
 }
@@ -172,10 +176,13 @@ function generateCompanyGroups(companiesWithHalls) {
 function updateIcons(elem) {
   var uni = elem.value;
   if (!elem.checked) {
+    // remove University lines and highlights
     iconGroups[uni]["lines"].eachLayer(function (layer) {
+        // if not added by company then remove from map
         if (!companyDisplayedLines[layer._leaflet_id]) {
           mymap.removeLayer(layer);
         }
+        // delete from uni displayed array
         delete uniDisplayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["uni-lines"].eachLayer(function (layer) {
@@ -183,10 +190,14 @@ function updateIcons(elem) {
         delete uniDisplayedLines[layer._leaflet_id];
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
-        layer._icon.style.borderColor = hallsColour;
-        highlightedIcons[layer._leaflet_id] = layer;
+        // remove icon highlight, check if highlighted by company first
+        if (!companyHighlightedIcons[layer._leaflet_id]) {
+          layer._icon.style.borderColor = hallsColour;
+        }
+        delete uniHighlightedIcons[layer._leaflet_id];
     });
   } else {
+    // adding University lines and highlights
     iconGroups[uni]["lines"].eachLayer(function (layer) {
         mymap.addLayer(layer);
         uniDisplayedLines[layer._leaflet_id] = layer;
@@ -196,8 +207,10 @@ function updateIcons(elem) {
         uniDisplayedLines[layer._leaflet_id] = layer;
     });
     iconGroups[uni]["halls"].eachLayer(function (layer) {
+        // add highlight
         layer._icon.style.borderColor = hallsHiglightedColour;
-        delete highlightedIcons[layer._leaflet_id];
+        // add to highlighted by uni
+        uniHighlightedIcons[layer._leaflet_id] = layer;
     });
   }
 }
