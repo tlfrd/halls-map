@@ -52,9 +52,9 @@ function addKey(map) {
   keyUI.update = function (props) {
     this._div.innerHTML = '<h4>Key</h4>' +
     '<table>' +
-    '<tr><td><b>Halls:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
-    '<tr><td><b>Universities:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
-    '<tr><td><b>Companies:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
+    '<tr><td>Halls: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
+    '<tr><td>Universities: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
+    '<tr><td>Companies: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
     '</table>'
   };
 
@@ -65,7 +65,8 @@ function generateControls(universities, map) {
   // sort universities alphabetically
   universities = _.sortBy(universities);
 
-  var string = '<input type="checkbox" name="university_all" value="all">All</br><hr class="control-all-hr">';
+  var string = '<input type="checkbox" id="all" name="university_all" value="all">' +
+  '<span class="universities-all">All</span></br><hr class="control-all-hr">';
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
@@ -83,7 +84,7 @@ function generateControls(universities, map) {
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>Halls Selection</h4>' +
-    '<h5 class="drop-control">Display Menu <i class="fa fa-caret-down" aria-hidden="true"></i></h5>' +
+    '<span class="drop-control">Display Menu <i class="fa fa-caret-down" aria-hidden="true"></i></span>' +
     '<form id="halls-selection" action="">' + string + '</form>'
   };
 
@@ -385,6 +386,10 @@ function loadMap(map) {
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
 
+        L.control.zoom({
+           position:'topleft'
+        }).addTo(map);
+
         $("input[name='university']").change(function() {
             updateIcons(this);
         });
@@ -425,7 +430,7 @@ function loadMap(map) {
 
 $(document).ready(function () {
   // initialise map
-  mymap = L.map('map').setView(initLatLong, zoomLevel);
+  mymap = L.map('map', {zoomControl: false}).setView(initLatLong, zoomLevel);
 
   // add tile layer to map
   L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
