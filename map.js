@@ -266,6 +266,13 @@ function loadMap(map) {
             icon: L.BeautifyIcon.icon(unisOptions)
           }).addTo(map);
           uniMarker.bindPopup(uniPopupInfo(key, uni));
+          uniMarker.on('mouseover', function (e) {
+            this.openPopup();
+          });
+          uniMarker.on('mouseout', function (e) {
+            this.closePopup();
+          });
+
         });
 
         $.each(halls, function(key, hall) {
@@ -284,6 +291,12 @@ function loadMap(map) {
               icon: L.BeautifyIcon.icon(hallsOptions)
             }).addTo(map);
             hallMarker.bindPopup(hallPopupInfo(hall));
+            hallMarker.on('mouseover', function (e) {
+              this.openPopup();
+            });
+            hallMarker.on('mouseout', function (e) {
+              this.closePopup();
+            });
 
             // add hall marker to univerity with halls object
             addToUnisWithHalls(unisWithHalls, hall, hallMarker, "halls");
@@ -304,6 +317,13 @@ function loadMap(map) {
                   });
                   companyMarker.addTo(map);
                   companyMarker.bindPopup(companyPopupInfo(hall["Owned by"], company));
+                  companyMarker.on('mouseover', function (e) {
+                    this.openPopup();
+                  });
+                  companyMarker.on('mouseout', function (e) {
+                    this.closePopup();
+                  });
+
                 }
 
                 // create line between company and hall

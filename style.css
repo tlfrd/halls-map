@@ -44,6 +44,7 @@ body {
 .info {
     padding: 6px 8px;
     font: 10px/12px Arial, Helvetica, sans-serif;
+    font-weight: bold;
     background: white;
     background: rgba(255,255,255,0.8);
     border: 1px solid black;
@@ -104,4 +105,12 @@ body {
 
 .circle-left-padding {
   padding-left: 10px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+  border: 1px solid black;
+  background: rgba(255,255,255,0.8);
+  border-radius: 0px;
+  font-weight: bold;
 }
