@@ -63,12 +63,12 @@ function generateControls(universities, map) {
   // sort universities alphabetically
   universities = _.sortBy(universities);
 
-  var string = "";
+  var string = '<input type="checkbox" name="university_all" value="all">All</br><hr class="control-all-hr">';
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '">' + universities[i] + '<br>'
+    universities[i] + '">' + universities[i] + '</br>'
   }
 
   var info = L.control();
@@ -223,6 +223,30 @@ function isCoordinates(coord) {
   return isNumeric(coord[0]) && isNumeric(coord[1]);
 }
 
+function dropControlLogic() {
+  if (drop_control_up === false) {
+    $("#halls-selection").show();
+    $(".drop-control").html('Hide Menu <i class="fa fa-chevron-up" aria-hidden="true"></i>');
+    drop_control_up = true;
+  } else {
+    $("#halls-selection").hide();
+    $(".drop-control").html('Show Menu <i class="fa fa-chevron-down" aria-hidden="true"></i>');
+    drop_control_up = false;
+  }
+}
+
+function uniPopupInfo(name, uni) {
+  return name + "<br/>" + uni.Address;
+}
+
+function hallPopupInfo(hall) {
+  return hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address;
+}
+
+function companyPopupInfo(name, company) {
+  return name + "<br/>" + company["Head office address"];
+}
+
 // given a leaftlet map, loads json and displays data
 function loadMap(map) {
   var universities = [];
@@ -241,7 +265,14 @@ function loadMap(map) {
           var uniMarker = L.marker(latLong, {
             icon: L.BeautifyIcon.icon(unisOptions)
           }).addTo(map);
-          uniMarker.bindPopup(key + "<br/>" + uni.Address);
+          uniMarker.bindPopup(uniPopupInfo(key, uni));
+          uniMarker.on('mouseover', function (e) {
+            this.openPopup();
+          });
+          uniMarker.on('mouseout', function (e) {
+            this.closePopup();
+          });
+
         });
 
         $.each(halls, function(key, hall) {
@@ -259,7 +290,13 @@ function loadMap(map) {
             var hallMarker = L.marker(uniLatLong, {
               icon: L.BeautifyIcon.icon(hallsOptions)
             }).addTo(map);
-            hallMarker.bindPopup(hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address);
+            hallMarker.bindPopup(hallPopupInfo(hall));
+            hallMarker.on('mouseover', function (e) {
+              this.openPopup();
+            });
+            hallMarker.on('mouseout', function (e) {
+              this.closePopup();
+            });
 
             // add hall marker to univerity with halls object
             addToUnisWithHalls(unisWithHalls, hall, hallMarker, "halls");
@@ -279,7 +316,14 @@ function loadMap(map) {
                     showCompanyLinks(hall["Owned by"]);
                   });
                   companyMarker.addTo(map);
-                  companyMarker.bindPopup(hall["Owned by"] + "<br/>" + company["Head office address"]);
+                  companyMarker.bindPopup(companyPopupInfo(hall["Owned by"], company));
+                  companyMarker.on('mouseover', function (e) {
+                    this.openPopup();
+                  });
+                  companyMarker.on('mouseout', function (e) {
+                    this.closePopup();
+                  });
+
                 }
 
                 // create line between company and hall
@@ -317,20 +361,21 @@ function loadMap(map) {
         addKey(map)
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
-        $("input[name='university']").click(function() {
+
+        $("input[name='university']").change(function() {
             updateIcons(this);
         });
 
-        $(".drop-control").click(function() {
-            if (drop_control_up === false) {
-              $("#halls-selection").show();
-              $(".drop-control").html('Hide Menu <i class="fa fa-chevron-up" aria-hidden="true"></i>');
-              drop_control_up = true;
+        $("input[name='university_all']").change(function() {
+            if (!this.checked) {
+              $("input[name='university']").prop('checked', false).change();
             } else {
-              $("#halls-selection").hide();
-              $(".drop-control").html('Show Menu <i class="fa fa-chevron-down" aria-hidden="true"></i>');
-              drop_control_up = false;
+              $("input[name='university']").prop('checked', true).change();
             }
+        })
+
+        $(".drop-control").click(function() {
+          dropControlLogic();
         });
       });
     });

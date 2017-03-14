@@ -54,6 +54,24 @@ body {
     color: #777;
 }
 
+.circle-left-padding {
+  padding-left: 10px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+  border: 1px solid black;
+  background: rgba(255,255,255,0.8);
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.control-all-hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid black;
+}
+
 @media only screen and (min-width: 768px) {
   #info-panel {
     text-align: center;
@@ -74,7 +92,7 @@ body {
 
   #map {
     height: 100vh;
-    width: 80vw;
+    width: 79vw;
     float: right;
     display: block;
     border-left: 1px solid black;
@@ -100,8 +118,4 @@ body {
   .info {
       font: 14px/16px Arial, Helvetica, sans-serif;
   }
-}
-
-.circle-left-padding {
-  padding-left: 10px;
 }
