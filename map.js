@@ -3,12 +3,14 @@
 var mymap;
 
 var initLatLong = [51.505, -0.09];
-var zoomLevel = 10.5;
+var zoomLevel = 12;
 
 var drop_control_up = false;
 
 var iconGroups = {};
 var companyIconGroups = {};
+
+var uniMarkers = {};
 
 var uniDisplayedLines = {};
 var companyDisplayedLines = {};
@@ -68,7 +70,7 @@ function generateControls(universities, map) {
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '">' + universities[i] + '</br>'
+    universities[i] + '"><span class="universities">' + universities[i] + '</span></br>'
   }
 
   var info = L.control();
@@ -313,10 +315,12 @@ function loadMap(map) {
   $.getJSON("halls.json", function(halls) {
     $.getJSON("companies.json", function(companies) {
       $.getJSON("universities.json", function(uni_map_data) {
+        universityData = uni_map_data;
 
         // add unis to map
         $.each(uni_map_data, function(uni_name, uni_info) {
-          addUniToMap(uni_name, uni_info, map);
+          var uniMarker = addUniToMap(uni_name, uni_info, map);
+          uniMarkers[uni_name] = uniMarker;
         });
 
         $.each(halls, function(hall_name, hall_info) {
@@ -384,6 +388,24 @@ function loadMap(map) {
         $("input[name='university']").change(function() {
             updateIcons(this);
         });
+
+        $(".universities").click(function() {
+            var universityName = this.innerHTML;
+            if (universityData = uni_map_data[universityName]) {
+              var universityCoords = [universityData.Latitude, universityData.Longitude];
+              map.flyTo(universityCoords);
+              map.on('zoomend', function() {
+                uniMarkers[universityName].openPopup();
+              });
+            }
+            $("input[value=\"" + universityName + "\"]").prop('checked', true).change();
+        });
+
+        $(".universities").hover(function() {
+          if (universityName = uniMarkers[this.innerHTML]) {
+            uniMarkers[this.innerHTML].openPopup();
+          }
+        })
 
         $("input[name='university_all']").change(function() {
             if (!this.checked) {

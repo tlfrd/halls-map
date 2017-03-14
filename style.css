@@ -41,6 +41,16 @@ body {
   display: none;
 }
 
+.universities {
+  color: #0074e8;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.universities:hover {
+  color: black;
+}
+
 .info {
     padding: 6px 8px;
     font: 10px/12px Arial, Helvetica, sans-serif;
