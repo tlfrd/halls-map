@@ -44,7 +44,6 @@ body {
 .info {
     padding: 6px 8px;
     font: 10px/12px Arial, Helvetica, sans-serif;
-    font-weight: bold;
     background: white;
     background: rgba(255,255,255,0.8);
     border: 1px solid black;
@@ -53,6 +52,24 @@ body {
 .info h4 {
     margin: 0 0 5px;
     color: #777;
+}
+
+.circle-left-padding {
+  padding-left: 10px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+  border: 1px solid black;
+  background: rgba(255,255,255,0.8);
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.control-all-hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid black;
 }
 
 @media only screen and (min-width: 768px) {
@@ -101,16 +118,4 @@ body {
   .info {
       font: 14px/16px Arial, Helvetica, sans-serif;
   }
-}
-
-.circle-left-padding {
-  padding-left: 10px;
-}
-
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-  box-shadow: none;
-  border: 1px solid black;
-  background: rgba(255,255,255,0.8);
-  border-radius: 0px;
-  font-weight: bold;
 }

@@ -63,12 +63,12 @@ function generateControls(universities, map) {
   // sort universities alphabetically
   universities = _.sortBy(universities);
 
-  var string = "";
+  var string = '<input type="checkbox" name="university_all" value="all">All</br><hr class="control-all-hr">';
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '">' + universities[i] + '<br>'
+    universities[i] + '">' + universities[i] + '</br>'
   }
 
   var info = L.control();
@@ -362,9 +362,17 @@ function loadMap(map) {
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
 
-        $("input[name='university']").click(function() {
+        $("input[name='university']").change(function() {
             updateIcons(this);
         });
+
+        $("input[name='university_all']").change(function() {
+            if (!this.checked) {
+              $("input[name='university']").prop('checked', false).change();
+            } else {
+              $("input[name='university']").prop('checked', true).change();
+            }
+        })
 
         $(".drop-control").click(function() {
           dropControlLogic();
