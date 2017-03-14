@@ -223,6 +223,30 @@ function isCoordinates(coord) {
   return isNumeric(coord[0]) && isNumeric(coord[1]);
 }
 
+function dropControlLogic() {
+  if (drop_control_up === false) {
+    $("#halls-selection").show();
+    $(".drop-control").html('Hide Menu <i class="fa fa-chevron-up" aria-hidden="true"></i>');
+    drop_control_up = true;
+  } else {
+    $("#halls-selection").hide();
+    $(".drop-control").html('Show Menu <i class="fa fa-chevron-down" aria-hidden="true"></i>');
+    drop_control_up = false;
+  }
+}
+
+function uniPopupInfo(name, uni) {
+  return name + "<br/>" + uni.Address;
+}
+
+function hallPopupInfo(hall) {
+  return hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address;
+}
+
+function companyPopupInfo(name, company) {
+  return name + "<br/>" + company["Head office address"];
+}
+
 // given a leaftlet map, loads json and displays data
 function loadMap(map) {
   var universities = [];
@@ -241,7 +265,7 @@ function loadMap(map) {
           var uniMarker = L.marker(latLong, {
             icon: L.BeautifyIcon.icon(unisOptions)
           }).addTo(map);
-          uniMarker.bindPopup(key + "<br/>" + uni.Address);
+          uniMarker.bindPopup(uniPopupInfo(key, uni));
         });
 
         $.each(halls, function(key, hall) {
@@ -259,7 +283,7 @@ function loadMap(map) {
             var hallMarker = L.marker(uniLatLong, {
               icon: L.BeautifyIcon.icon(hallsOptions)
             }).addTo(map);
-            hallMarker.bindPopup(hall.University + "<br/>" + hall.Hall + "<br/>" + hall.Address);
+            hallMarker.bindPopup(hallPopupInfo(hall));
 
             // add hall marker to univerity with halls object
             addToUnisWithHalls(unisWithHalls, hall, hallMarker, "halls");
@@ -279,7 +303,7 @@ function loadMap(map) {
                     showCompanyLinks(hall["Owned by"]);
                   });
                   companyMarker.addTo(map);
-                  companyMarker.bindPopup(hall["Owned by"] + "<br/>" + company["Head office address"]);
+                  companyMarker.bindPopup(companyPopupInfo(hall["Owned by"], company));
                 }
 
                 // create line between company and hall
@@ -317,20 +341,13 @@ function loadMap(map) {
         addKey(map)
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
+
         $("input[name='university']").click(function() {
             updateIcons(this);
         });
 
         $(".drop-control").click(function() {
-            if (drop_control_up === false) {
-              $("#halls-selection").show();
-              $(".drop-control").html('Hide Menu <i class="fa fa-chevron-up" aria-hidden="true"></i>');
-              drop_control_up = true;
-            } else {
-              $("#halls-selection").hide();
-              $(".drop-control").html('Show Menu <i class="fa fa-chevron-down" aria-hidden="true"></i>');
-              drop_control_up = false;
-            }
+          dropControlLogic();
         });
       });
     });
