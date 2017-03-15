@@ -66,9 +66,17 @@ function addKey(map) {
 
 function changeCompanyDescription(company_name, map) {
   var companyDesc = $(".company-description-hidden[id='" + company_name + "']")[0].innerHTML;
+  var mobileMessage = '<div class="instructions"><b>Click a company icon <i class="fa fa-circle" style="color:' +
+  companiesColour + '"></i> to find out more</br>' +
+  'Or uses the halls selection menu to display by university</b></div>';
+
   var exit = '<span class="exit-button">Hide</span>';
   companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
   '<b class="info-company-name">' + company_name + '</b>' + exit + '</br><div class="company-description">' + companyDesc + '</div></div>';
+
+  companyInfoUI._container.innerHTML += '<div class="company-description-container-mobile">' +
+  '<div class="company-description-mobile">' + mobileMessage + '</div></div>';
+
   $(".company-description").css('overflow', 'none');
   $(".exit-button").click(function() {
     resetCompanyDescription();
@@ -76,19 +84,24 @@ function changeCompanyDescription(company_name, map) {
 }
 
 function resetCompanyDescription() {
-  console.log("hello");
-  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' + companiesColour + '"></i> to find out more information</b>';
+  var message = '<div class="instructions"><b>Click a company icon <i class="fa fa-circle" style="color:' +
+  companiesColour + '"></i> to find out more</br>' +
+  'Or uses the halls selection menu to display by university</b></div>';
 
   companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
   '<div class="company-description">' + message + '</div></div>';
+
+  companyInfoUI._container.innerHTML += '<div class="company-description-container-mobile">' +
+  '<div class="company-description-mobile">' + message + '</div></div>';
   $(".company-description").css('overflow', 'none');
 }
 
 function addCompanyDescriptionToMap(map) {
   var desc = L.control({position: 'bottomleft'});
 
-  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' +
-  companiesColour + '"></i> to find out more information</b>';
+  var message = '<div class="instructions"><b>Click a company icon </td><td><i class="fa fa-circle" style="color:' +
+  companiesColour + '"></i> to find out more</br>' +
+  'Or uses the halls selection menu to display by university</b></div>';
 
   desc.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info');
@@ -99,6 +112,8 @@ function addCompanyDescriptionToMap(map) {
   desc.update = function (props) {
     this._div.innerHTML = '<div class="company-description-container">' +
     '<div class="company-description">' + message + '</div></div>';
+    this._div.innerHTML += '<div class="company-description-container-mobile">' +
+    '<div class="company-description-mobile">' + message + '</div></div>';
   };
 
   desc.addTo(map);
@@ -468,9 +483,9 @@ function loadMap(map) {
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
               map.flyTo(universityCoords, 13);
-              map.on('zoomend', function() {
-                uniMarkers[universityName].openPopup();
-              });
+              // map.on('zoomend', function() {
+              //   uniMarkers[universityName].openPopup();
+              // });
             }
             $("input[value=\"" + universityName + "\"]").prop('checked', true).change();
         });

@@ -49,16 +49,20 @@ body {
   display: none;
 }
 
-.company-description {
-  display: none;
-}
-
 .company-description-hidden {
   display: none;
 }
 
+.company-description-container-mobile {
+  display: block;
+}
+
+.company-description-hidden-mobile {
+  display: block;
+}
+
 .instructions {
-  display: none;
+  line-height: 20px;
 }
 
 .universities, .universities-all {
@@ -197,6 +201,14 @@ body {
   }
 
   .modal-link {
+    display: none;
+  }
+
+  .company-description-container-mobile {
+    display: none;
+  }
+
+  .company-description-hidden-mobile {
     display: none;
   }
 }
