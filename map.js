@@ -403,9 +403,9 @@ function loadMap(map) {
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
               map.flyTo(universityCoords);
-              map.on('zoomend', function() {
-                uniMarkers[universityName].openPopup();
-              });
+              // map.on('zoomend', function() {
+              //   uniMarkers[universityName].openPopup();
+              // });
             }
             $("input[value=\"" + universityName + "\"]").prop('checked', true).change();
         });

@@ -18,6 +18,7 @@ body {
 
 #map {
   height: 94vh;
+  width: 100vw;
 }
 
 #logo {
