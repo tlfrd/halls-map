@@ -69,7 +69,7 @@ function changeCompanyDescription(company_name, map) {
   var exit = '<span class="exit-button">Hide</span>';
   companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
   '<b class="info-company-name">' + company_name + '</b>' + exit + '</br><div class="company-description">' + companyDesc + '</div></div>';
-  $(".company-description").css('overflow', 'scroll');
+  $(".company-description").css('overflow', 'none');
   $(".exit-button").click(function() {
     resetCompanyDescription();
   });

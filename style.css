@@ -116,10 +116,6 @@ body {
   top: 1px;
 }
 
-.leaflet-bottom {
-  bottom: 20px;
-}
-
 .modal-link {
   display: block;
   font-weight: bold;
