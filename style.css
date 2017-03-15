@@ -92,7 +92,21 @@ body {
   border-top: 1px solid black;
 }
 
+.app-name {
+  display: inline;
+  font-weight: bold;
+  position: relative;
+  right: 4px;
+  top: 1px;
+}
+
 @media only screen and (min-width: 768px) {
+  .app-name {
+    display: block;
+    right: 0px;
+    top: 0px;
+    font-size: 1.2em;
+  }
   #info-panel {
     text-align: center;
     height: 100vh;
