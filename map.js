@@ -7,6 +7,8 @@ var zoomLevel = 12;
 
 var drop_control_up = false;
 
+var companyInfoUI;
+
 var allMarkers = [];
 
 var iconGroups = {};
@@ -60,6 +62,46 @@ function addKey(map) {
   };
 
   keyUI.addTo(map);
+}
+
+function changeCompanyDescription(company_name, map) {
+  var companyDesc = $(".company-description-hidden[id='" + company_name + "']")[0].innerHTML;
+  var exit = '<span class="exit-button">Hide</span>';
+  companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
+  '<b class="info-company-name">' + company_name + '</b>' + exit + '</br><div class="company-description">' + companyDesc + '</div></div>';
+  $(".company-description").css('overflow', 'scroll');
+  $(".exit-button").click(function() {
+    resetCompanyDesription();
+  });
+}
+
+function resetCompanyDesription() {
+  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' + companiesColour + '"></i> to find out more information</b>';
+
+  companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
+  '<div class="company-description">' + message + '</div></div>';
+  $(".company-description").css('overflow', 'none');
+}
+
+function addCompanyDescriptionToMap(map) {
+  var desc = L.control({position: 'bottomleft'});
+
+  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' + companiesColour + '"></i> to find out more information</b>';
+
+  desc.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info');
+    this.update();
+    return this._div;
+  };
+
+  desc.update = function (props) {
+    this._div.innerHTML = '<div class="company-description-container">' +
+    '<div class="company-description">' + message + '</div></div>';
+  };
+
+  desc.addTo(map);
+
+  return desc;
 }
 
 function generateControls(universities, map, uni_map_data) {
@@ -307,6 +349,9 @@ function addCompanyToMap(company_info, hall_info, map) {
   companyMarker.on('mouseout', function (e) {
     this.closePopup();
   });
+  companyMarker.on('click', function (e) {
+    changeCompanyDescription(hall_info["Owned by"], map);
+  });
 
   return companyMarker;
 }
@@ -404,6 +449,7 @@ function loadMap(map) {
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
         addAllIconsToArray(map);
+        companyInfoUI = addCompanyDescriptionToMap(map);
 
         L.control.zoom({
            position:'topleft'
@@ -417,7 +463,7 @@ function loadMap(map) {
             var universityName = $(this).attr("value");
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
-              map.flyTo(universityCoords);
+              map.flyTo(universityCoords, 13);
               // map.on('zoomend', function() {
               //   uniMarkers[universityName].openPopup();
               // });

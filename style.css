@@ -45,6 +45,22 @@ body {
   margin-top: 7px;
 }
 
+.company-description-container {
+  display: none;
+}
+
+.company-description {
+  display: none;
+}
+
+.company-description-hidden {
+  display: none;
+}
+
+.instructions {
+  display: none;
+}
+
 .universities, .universities-all {
   position: relative;
   bottom: 3px;
@@ -102,18 +118,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .app-name {
-    display: block;
-    right: 0px;
-    top: 0px;
     font-size: 1.2em;
-  }
-  #info-panel {
-    text-align: center;
-    height: 100vh;
-    width: 19vw;
-    padding-left: 1vw;
-    float: left;
-    border-bottom: 0px;
   }
 
   .drop-control {
@@ -126,39 +131,44 @@ body {
     display: block;
   }
 
-  #map {
-    height: 100vh;
-    width: 79vw;
-    float: right;
-    display: block;
-    border-left: 1px solid black;
-  }
-
-  #logo img {
-    padding-top: 10px;
-    padding-left: 1vw;
-    width: 17vw;
-    height: auto;
-  }
-
-  #copyright-desktop {
-    display: block;
-    position: absolute;
-    width: 17vw;
-    bottom: 0px;
-    font-size: 11px;
-    padding-left: 2vw;
-  }
-
-  #copyright-mobile {
-    display: none;
-  }
-
   .info {
       font: 14px/16px Arial, Helvetica, sans-serif;
   }
 
   .universities, .universities-all {
     bottom: 2px;
+  }
+
+  .company-description-container {
+    display: block;
+    padding-top: 3px;
+  }
+
+  .company-description {
+    margin-top: 2px;
+    padding: 5px;
+    text-align: left;
+    display: block;
+    max-height: 60vh;
+    width: 30vw;
+  }
+
+  .instructions {
+    display: block;
+    text-align: left;
+  }
+
+  .exit-button {
+    float: right
+  }
+
+  .exit-button:hover {
+    color: red;
+    cursor: hand;
+    cursor: pointer;
+  }
+
+  .info-company-name {
+    padding-left:5px;
   }
 }
