@@ -7,9 +7,10 @@ var zoomLevel = 12;
 
 var drop_control_up = false;
 
+var allMarkers = [];
+
 var iconGroups = {};
 var companyIconGroups = {};
-
 var uniMarkers = {};
 
 var uniDisplayedLines = {};
@@ -310,6 +311,19 @@ function addCompanyToMap(company_info, hall_info, map) {
   return companyMarker;
 }
 
+function addAllIconsToArray(map) {
+  map.eachLayer(function (layer) {
+    if (layer._icon) {
+      allMarkers.push(layer);
+    }
+  });
+}
+
+function fitAllIcons(map, icons_array) {
+  var group = new L.featureGroup(icons_array);
+  map.fitBounds(group.getBounds());
+}
+
 // given a leaftlet map, loads json and displays data
 function loadMap(map) {
   var universities = [];
@@ -389,6 +403,7 @@ function loadMap(map) {
         addKey(map);
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
+        addAllIconsToArray(map);
 
         L.control.zoom({
            position:'topleft'
@@ -421,6 +436,7 @@ function loadMap(map) {
               $("input[name='university']").prop('checked', false).change();
             } else {
               $("input[name='university']").prop('checked', true).change();
+              fitAllIcons(map, allMarkers);
             }
         })
 
