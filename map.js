@@ -71,11 +71,12 @@ function changeCompanyDescription(company_name, map) {
   '<b class="info-company-name">' + company_name + '</b>' + exit + '</br><div class="company-description">' + companyDesc + '</div></div>';
   $(".company-description").css('overflow', 'scroll');
   $(".exit-button").click(function() {
-    resetCompanyDesription();
+    resetCompanyDescription();
   });
 }
 
-function resetCompanyDesription() {
+function resetCompanyDescription() {
+  console.log("hello");
   var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' + companiesColour + '"></i> to find out more information</b>';
 
   companyInfoUI._container.innerHTML = '<div class="company-description-container">' +
@@ -86,7 +87,8 @@ function resetCompanyDesription() {
 function addCompanyDescriptionToMap(map) {
   var desc = L.control({position: 'bottomleft'});
 
-  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' + companiesColour + '"></i> to find out more information</b>';
+  var message = '<b>Click a company icon </td><td><i class="fa fa-circle" style="color:' +
+  companiesColour + '"></i> to find out more information</b>';
 
   desc.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info');
@@ -193,6 +195,7 @@ function showCompanyLinks(company) {
       layer._icon.style.borderColor = hallsHiglightedColour;
     }
   });
+  // resetCompanyDescription();
 }
 
 // generate groups from object of universities and their halls
@@ -293,7 +296,8 @@ function hallPopupInfo(hall_info) {
 }
 
 function companyPopupInfo(company_name, company_info) {
-  return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"];
+  return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"] +
+  '</br><a class="modal-link" href="#' + "Unite Students" + '">Read more</a>';
 }
 
 function addUniToMap(uni_name, uni_info, map) {
@@ -464,9 +468,9 @@ function loadMap(map) {
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
               map.flyTo(universityCoords, 13);
-              // map.on('zoomend', function() {
-              //   uniMarkers[universityName].openPopup();
-              // });
+              map.on('zoomend', function() {
+                uniMarkers[universityName].openPopup();
+              });
             }
             $("input[value=\"" + universityName + "\"]").prop('checked', true).change();
         });
