@@ -55,7 +55,8 @@ function addKey(map) {
   keyUI.update = function (props) {
     this._div.innerHTML = '<h4>Key</h4>' +
     '<table>' +
-    '<tr><td>Halls: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
+    '<tr><td>Halls (Selected): </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i>' +
+    ' / <i class="fa fa-circle" style="color:' + hallsHiglightedColour + '"></i></td></tr>' +
     '<tr><td>Universities: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
     '<tr><td>Companies: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
     '</table>'
