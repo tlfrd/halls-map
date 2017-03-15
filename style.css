@@ -4,7 +4,7 @@ body {
 }
 
 #info-panel {
-  height: 10vh;
+  height: 6vh;
   border-bottom: 1px solid black;
 }
 
@@ -17,24 +17,17 @@ body {
 }
 
 #map {
-  height: 77vh;
+  height: 94vh;
 }
 
 #logo {
-  padding-top: 10px;
+  padding-top: 1vh;
   text-align: center;
 }
 
 #logo img {
-  width: 50vw;
-}
-
-#copyright-mobile {
-  height: 3vh;
-  text-align: center;
-  font-size: 10px;
-  padding: 2vh;
-  border-top: 1px solid black;
+  height: 4vh;
+  width: auto;
 }
 
 #copyright-desktop {
@@ -47,6 +40,16 @@ body {
   cursor: pointer;
 }
 
+#all {
+  margin-top: 7px;
+}
+
+.universities, .universities-all {
+  position: relative;
+  bottom: 3px;
+  left: 3px;
+}
+
 .universities:hover {
   color: black;
 }
@@ -55,13 +58,14 @@ body {
     padding: 6px 8px;
     font: 10px/12px Arial, Helvetica, sans-serif;
     background: white;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.9);
     border: 1px solid black;
 }
 
 .info h4 {
     margin: 0 0 5px;
-    color: #777;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .circle-left-padding {
@@ -71,9 +75,14 @@ body {
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   box-shadow: none;
   border: 1px solid black;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
   border-radius: 0px;
-  font-weight: bold;
+  max-width: 200px;
+}
+
+.leaflet-touch .leaflet-bar {
+  border: 1px solid black;
+  border-radius: 0px;
 }
 
 .control-all-hr {
@@ -94,6 +103,8 @@ body {
 
   .drop-control {
     display: none;
+    font-weight: normal;
+    padding-bottom: 10px;
   }
 
   #halls-selection {
@@ -109,7 +120,10 @@ body {
   }
 
   #logo img {
+    padding-top: 10px;
+    padding-left: 1vw;
     width: 17vw;
+    height: auto;
   }
 
   #copyright-desktop {
@@ -127,5 +141,9 @@ body {
 
   .info {
       font: 14px/16px Arial, Helvetica, sans-serif;
+  }
+
+  .universities, .universities-all {
+    bottom: 2px;
   }
 }

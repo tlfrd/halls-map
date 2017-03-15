@@ -2,86 +2,127 @@
   "Brunel": {
     "Address": "Kingston Ln, London, Uxbridge UB8 3PH",
     "Latitude": 51.531922,
-    "Longitude": -0.466417
+    "Longitude": -0.466417,
+    "Shortname": "Brunel",
+    "Longname": "Brunel University London"
   },
   "City": {
     "Address": "Northampton Square, London EC1V 0HB",
     "Latitude": 51.527082,
-    "Longitude": -0.102717
+    "Longitude": -0.102717,
+    "Shortname": "City",
+    "Longname": "City, University of London"
   },
   "Goldsmiths": {
     "Address": "8 Lewisham Way, New Cross, London SE14 6NW",
     "Latitude": 51.474384,
-    "Longitude": -0.036074
+    "Longitude": -0.036074,
+    "Shortname": "Goldsmiths",
+    "Longname": "Goldsmiths, University of London"
   },
   "King's": {
     "Address": "King's College London, Strand, London WC2R 2LS",
     "Latitude": 51.511486,
-    "Longitude": -0.115997
+    "Longitude": -0.115997,
+    "Shortname": "King's",
+    "Longname": "King's College London"
   },
   "Kingston": {
     "Address": "Penrhyn Rd, Kingston upon Thames KT1 2EE",
     "Latitude": 51.403611,
-    "Longitude": -0.304349
+    "Longitude": -0.304349,
+    "Shortname": "Kingston",
+    "Longname": "Kingston University London"
   },
   "London South Bank": {
     "Address": "103 Borough Rd, London SE1 0AA",
     "Latitude": 51.498651,
-    "Longitude": -0.10168
+    "Longitude": -0.10168,
+    "Shortname": "LSBU",
+    "Longname": "London South Bank University"
   },
   "SOAS": {
     "Address": "London WC1H 0XG",
     "Latitude": 51.52235,
-    "Longitude": -0.129259
+    "Longitude": -0.129259,
+    "Shortname": "SOAS",
+    "Longname": "SOAS, University of London"
   },
   "St. George's": {
     "Address": "Cranmer Terrace, London SW17 0RE",
     "Latitude": 51.427829,
-    "Longitude": -0.175829
+    "Longitude": -0.175829,
+    "Shortname": "St. George's",
+    "Longname": "St. George's, University of London"
   },
   "UCL": {
     "Address": "Gower St, Kings Cross, London WC1E 6BT",
     "Latitude": 51.52447,
-    "Longitude": -0.134784
+    "Longitude": -0.134784,
+    "Shortname": "UCL",
+    "Longname": "University College London"
   },
   "University of Greenwich": {
     "Address": "Old Royal Naval College, 30 Park Row, London SE10 9LS",
     "Latitude": 51.482565,
-    "Longitude": -0.006758
+    "Longitude": -0.006758,
+    "Shortname": "Greenwich",
+    "Longname": "University of Greenwich"
   },
   "University of Roehampton": {
     "Address": "Erasmus House, Roehampton Ln, London SW15 5PU",
     "Latitude": 51.457366,
-    "Longitude": -0.245346
+    "Longitude": -0.245346,
+    "Shortname": "Roehampton",
+    "Longname": "University of Roehampton"
   },
   "University of Westminster": {
     "Address": "309 Regent St, Marylebone, London W1B 2UW",
     "Latitude": 51.516706,
-    "Longitude": -0.142555
+    "Longitude": -0.142555,
+    "Shortname": "Westminster",
+    "Longname": "University of Westminster"
   },
   "University of West London": {
     "Address": "St Mary's Rd, London W5 5RF",
     "Latitude": 51.506306,
-    "Longitude": -0.305176
+    "Longitude": -0.305176,
+    "Shortname": "UWL",
+    "Longname": "University of West London"
   },
   "UoL Halls": {
     "Address": "University of London, Senate House, Malet Street, London WC1E 7HU",
     "Latitude": 51.521074,
-    "Longitude": -0.128735
+    "Longitude": -0.128735,
+    "Shortname": "UoL Halls",
+    "Longname": "University of London Halls"
   },
   "Imperial": {
     "Address": "Imperial College London, Kensington, London SW7 2AZ",
     "Latitude": 51.4988,
-    "Longitude": -0.174877
+    "Longitude": -0.174877,
+    "Shortname": "Imperial",
+    "Longname": "Imperial College London"
   },
   "Royal Holloway": {
     "Address": "Egham Hill, Egham TW20 0EX",
     "Latitude": 51.425673,
-    "Longitude": -0.563063
+    "Longitude": -0.563063,
+    "Shortname": "Royal Holloway",
+    "Longname": "Royal Holloway, University of London"
   },
   "LSE": {
     "Address": "Houghton St, London WC2A 2AE",
     "Latitude": 51.513499,
-    "Longitude": -0.116733
+    "Longitude": -0.116733,
+    "Shortname": "LSE",
+    "Longname": "London School of Economics"
+  },
+  "Middlesex": {
+    "Address": "The Burroughs, London NW4 4BT",
+    "Latitude": 51.589501,
+    "Longitude": -0.227902,
+    "Shortname": "Middlesex",
+    "Longname": "Middlesex University"
   }
 }

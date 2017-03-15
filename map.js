@@ -52,25 +52,30 @@ function addKey(map) {
   keyUI.update = function (props) {
     this._div.innerHTML = '<h4>Key</h4>' +
     '<table>' +
-    '<tr><td><b>Halls:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
-    '<tr><td><b>Universities:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
-    '<tr><td><b>Companies:</b> </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
+    '<tr><td>Halls: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + hallsColour + '"></i></td></tr>' +
+    '<tr><td>Universities: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + unisColour + '"></i></td></tr>' +
+    '<tr><td>Companies: </td><td><i class="fa fa-circle circle-left-padding" style="color:' + companiesColour + '"></i></td></tr>' +
     '</table>'
   };
 
   keyUI.addTo(map);
 }
 
-function generateControls(universities, map) {
+function generateControls(universities, map, uni_map_data) {
   // sort universities alphabetically
   universities = _.sortBy(universities);
 
-  var string = '<input type="checkbox" name="university_all" value="all">All</br><hr class="control-all-hr">';
+  var string = '<input type="checkbox" id="all" name="university_all" value="all">' +
+  '<span class="universities-all">All</span></br><hr class="control-all-hr">';
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
+    var displayedName = universities[i];
+    if (uni_map_data[universities[i]]) {
+      displayedName = uni_map_data[universities[i]].Shortname;
+    }
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '"><span class="universities">' + universities[i] + '</span></br>'
+    universities[i] + '"><span class="universities" value="' + universities[i] + '">' + displayedName + '</span></br>'
   }
 
   var info = L.control();
@@ -83,7 +88,7 @@ function generateControls(universities, map) {
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>Halls Selection</h4>' +
-    '<h5 class="drop-control">Display Menu <i class="fa fa-caret-down" aria-hidden="true"></i></h5>' +
+    '<span class="drop-control">Display Menu <i class="fa fa-caret-down" aria-hidden="true"></i></span>' +
     '<form id="halls-selection" action="">' + string + '</form>'
   };
 
@@ -237,15 +242,15 @@ function dropControlLogic() {
 }
 
 function uniPopupInfo(uni_name, uni_info) {
-  return uni_name + "<br/>" + uni_info.Address;
+  return "<b>University:</b> " + universityData[uni_name].Longname + "</br><b>Address:</b> " + uni_info.Address;
 }
 
 function hallPopupInfo(hall_info) {
-  return hall_info.University + "<br/>" + hall_info.Hall + "<br/>" + hall_info.Address;
+  return "<b>Hall:</b> " + hall_info.Hall + "</br><b>University:</b> " + hall_info.University + "</br><b>Address:</b> " +  hall_info.Address;
 }
 
 function companyPopupInfo(company_name, company_info) {
-  return company_name + "<br/>" + company_info["Head office address"];
+  return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"];
 }
 
 function addUniToMap(uni_name, uni_info, map) {
@@ -380,17 +385,21 @@ function loadMap(map) {
             }
           }
         });
-        generateControls(universities, map);
+        generateControls(universities, map, uni_map_data);
         addKey(map);
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
+
+        L.control.zoom({
+           position:'topleft'
+        }).addTo(map);
 
         $("input[name='university']").change(function() {
             updateIcons(this);
         });
 
         $(".universities").click(function() {
-            var universityName = this.innerHTML;
+            var universityName = $(this).attr("value");
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
               map.flyTo(universityCoords);
@@ -402,8 +411,8 @@ function loadMap(map) {
         });
 
         $(".universities").hover(function() {
-          if (universityName = uniMarkers[this.innerHTML]) {
-            uniMarkers[this.innerHTML].openPopup();
+          if (universityName = uniMarkers[$(this).attr("value")]) {
+            uniMarkers[$(this).attr("value")].openPopup();
           }
         })
 
@@ -425,7 +434,7 @@ function loadMap(map) {
 
 $(document).ready(function () {
   // initialise map
-  mymap = L.map('map').setView(initLatLong, zoomLevel);
+  mymap = L.map('map', {zoomControl: false}).setView(initLatLong, zoomLevel);
 
   // add tile layer to map
   L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
