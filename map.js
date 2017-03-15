@@ -61,7 +61,7 @@ function addKey(map) {
   keyUI.addTo(map);
 }
 
-function generateControls(universities, map) {
+function generateControls(universities, map, uni_map_data) {
   // sort universities alphabetically
   universities = _.sortBy(universities);
 
@@ -70,8 +70,12 @@ function generateControls(universities, map) {
 
   var arrayLength = universities.length;
   for (var i = 0; i < arrayLength; i++) {
+    var displayedName = universities[i];
+    if (uni_map_data[universities[i]]) {
+      displayedName = uni_map_data[universities[i]].Shortname;
+    }
     string = string + '<input type="checkbox" name="university" value="' +
-    universities[i] + '"><span class="universities">' + universities[i] + '</span></br>'
+    universities[i] + '"><span class="universities" value="' + universities[i] + '">' + displayedName + '</span></br>'
   }
 
   var info = L.control();
@@ -238,15 +242,15 @@ function dropControlLogic() {
 }
 
 function uniPopupInfo(uni_name, uni_info) {
-  return uni_name + "<br/>" + uni_info.Address;
+  return "<b>University:</b> " + universityData[uni_name].Longname + "</br><b>Address:</b> " + uni_info.Address;
 }
 
 function hallPopupInfo(hall_info) {
-  return hall_info.University + "<br/>" + hall_info.Hall + "<br/>" + hall_info.Address;
+  return "<b>Hall:</b> " + hall_info.Hall + "</br><b>University:</b> " + hall_info.University + "</br><b>Address:</b> " +  hall_info.Address;
 }
 
 function companyPopupInfo(company_name, company_info) {
-  return company_name + "<br/>" + company_info["Head office address"];
+  return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"];
 }
 
 function addUniToMap(uni_name, uni_info, map) {
@@ -381,7 +385,7 @@ function loadMap(map) {
             }
           }
         });
-        generateControls(universities, map);
+        generateControls(universities, map, uni_map_data);
         addKey(map);
         generateLayerGroups(unisWithHalls);
         generateCompanyGroups(companiesWithHalls);
@@ -395,7 +399,7 @@ function loadMap(map) {
         });
 
         $(".universities").click(function() {
-            var universityName = this.innerHTML;
+            var universityName = $(this).attr("value");
             if (universityData = uni_map_data[universityName]) {
               var universityCoords = [universityData.Latitude, universityData.Longitude];
               map.flyTo(universityCoords);
@@ -407,8 +411,8 @@ function loadMap(map) {
         });
 
         $(".universities").hover(function() {
-          if (universityName = uniMarkers[this.innerHTML]) {
-            uniMarkers[this.innerHTML].openPopup();
+          if (universityName = uniMarkers[$(this).attr("value")]) {
+            uniMarkers[$(this).attr("value")].openPopup();
           }
         })
 
