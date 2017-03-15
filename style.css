@@ -55,9 +55,10 @@ body {
 
 .company-description-container-mobile {
   display: block;
+  max-width: 60vw;
 }
 
-.company-description-hidden-mobile {
+.company-description-mobile {
   display: block;
 }
 
@@ -145,10 +146,18 @@ body {
 }
 
 .leaflet-bottom {
-  bottom: 3vw;
+  bottom: 10vh;
+}
+
+.leaflet-control-attribution {
+  max-width: 30vw;
 }
 
 @media only screen and (min-width: 768px) {
+  .leaflet-bottom {
+    bottom: 22px;
+  }
+
   .app-name {
     font-size: 1.2em;
   }
