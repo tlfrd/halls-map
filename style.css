@@ -116,6 +116,34 @@ body {
   top: 1px;
 }
 
+.leaflet-bottom {
+  bottom: 20px;
+}
+
+.modal-link {
+  display: block;
+  font-weight: bold;
+  color: rgb(232, 0, 0);
+}
+
+.company-description-modal {
+  text-align: left;
+  max-height: 50vh;
+  overflow: scroll;
+  border-bottom: 1px solid rgb(232, 0, 0);
+}
+
+.remodal-cancel-red {
+  background: rgb(232, 0, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
 @media only screen and (min-width: 768px) {
   .app-name {
     font-size: 1.2em;
@@ -150,7 +178,7 @@ body {
     text-align: left;
     display: block;
     max-height: 60vh;
-    width: 30vw;
+    max-width: 30vw;
   }
 
   .instructions {
@@ -170,5 +198,9 @@ body {
 
   .info-company-name {
     padding-left:5px;
+  }
+
+  .modal-link {
+    display: none;
   }
 }
