@@ -27,7 +27,7 @@ var unisColour = '#0074e8';
 
 var hallsOptions = {
   iconShape: 'circle-dot',
-  borderWidth: 7,
+  borderWidth: 5,
   borderColor: hallsColour
 }
 
