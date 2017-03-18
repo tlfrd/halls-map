@@ -36,12 +36,20 @@
     chapter.animate({
         left: chapter.width() * 1.1
     }, 500);
+    chapter.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+      chapter.hide();
+      chapter.unbind();
+    });
   }
 
   function hideRightChapter(id) {
     var chapter = $("#ch" + id);
-    chapter.show().css({
+    chapter.css({
       left: -(chapter.width() * 1.1)
+    });
+    chapter.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+      chapter.hide();
+      chapter.unbind();
     });
   }
 
