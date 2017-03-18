@@ -7,6 +7,10 @@
   // Public Property
   // HallsMap.something = HallsMap.something || undefined;
 
+  HallsMap.hallsJSONUrl = "halls.json";
+  HallsMap.companiesJSONUrl = "companies.json";
+  HallsMap.unisJSONUrl = "universities.json";
+
   var initLatLong = [51.505, -0.09];
   var zoomLevel = 12;
 
@@ -50,6 +54,23 @@
     borderWidth: 7,
     borderColor:  unisColour
   }
+
+  // PUBLIC init
+  HallsMap.init = function () {
+    // initialise map
+    mymap = L.map('map', {zoomControl: false}).setView(initLatLong, zoomLevel);
+
+    // add tile layer to map
+    L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: 'abcd',
+      minZoom: 0,
+      maxZoom: 20,
+      ext: 'png'
+    }).addTo(mymap);
+
+    loadMap(mymap);
+  };
 
   // PUBLIC Method
   HallsMap.toggleUniversityIcons = function (privateOrPublic, toggleBoolean) {
@@ -444,9 +465,9 @@
     var unisWithHalls = {};
     var companiesWithHalls = {};
 
-    $.getJSON("halls.json", function(halls) {
-      $.getJSON("companies.json", function(companies) {
-        $.getJSON("universities.json", function(uni_map_data) {
+    $.getJSON(HallsMap.hallsJSONUrl, function(halls) {
+      $.getJSON(HallsMap.companiesJSONUrl, function(companies) {
+        $.getJSON(HallsMap.unisJSONUrl, function(uni_map_data) {
           universityData = uni_map_data;
 
           // add unis to map
@@ -567,21 +588,5 @@
       });
     });
   }
-
-  $(document).ready(function () {
-    // initialise map
-    mymap = L.map('map', {zoomControl: false}).setView(initLatLong, zoomLevel);
-
-    // add tile layer to map
-    L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
-    	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    	subdomains: 'abcd',
-    	minZoom: 0,
-    	maxZoom: 20,
-    	ext: 'png'
-    }).addTo(mymap);
-
-    loadMap(mymap);
-  });
 
 })($, window.HallsMap = window.HallsMap || {});
