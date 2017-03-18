@@ -29,16 +29,15 @@
   function hideLeftChapter(id) {
     var chapter = $("#ch" + id);
     chapter.animate({
-        left: chapter.width() * 1.3
+        left: chapter.width() * 1.1
     }, 500);
   }
 
   function hideRightChapter(id) {
-    console.log(id);
     var chapter = $("#ch" + id);
-    chapter.animate({
-        left: -(chapter.width() * 1.3)
-    }, 500);
+    chapter.show().css({
+      left: -(chapter.width() * 1.1)
+    });
   }
 
   function showLeftChapter(id, animate_boolean) {
@@ -59,19 +58,27 @@
     var chapter = $("#ch" + id);
 
     if (animate_boolean) {
+      chapter.css({
+        left: (chapter.width())
+      });
       chapter.show().css({
-        right: -(chapter.width())
-      }).animate({
         left: 0
-      }, 500);
+      });
     } else {
-      chapter.show();
+      chapter.show().css({
+        left: 0
+      });
     }
   }
 
   Story.init = function () {
     console.log("Current Chapter: " + currentChapter);
     showRightChapter(0, false);
+
+    for (var i = 1; i <= 4; i+= 1) {
+      $("#ch" + i).show();
+      $("#ch" + i).hide();
+    }
 
     $('.right-arrow').click(function() {
       Story.nextChapter();
