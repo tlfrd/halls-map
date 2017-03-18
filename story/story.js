@@ -5,16 +5,21 @@
     1: [],
     2: [],
     3: [],
-    4: []
+    4: [],
+    5: []
   };
+
+  var numberOfChapters = 6;
 
   var currentChapter = 0;
 
   Story.nextChapter = function () {
-    hideRightChapter(currentChapter);
-    showRightChapter(currentChapter + 1, true);
-    currentChapter += 1;
-    console.log("Current Chapter: " + currentChapter);
+    if (currentChapter < numberOfChapters - 1) {
+      hideRightChapter(currentChapter);
+      showRightChapter(currentChapter + 1, true);
+      currentChapter += 1;
+      console.log("Current Chapter: " + currentChapter);
+    }
   };
 
   Story.previousChapter = function() {
@@ -75,7 +80,7 @@
     console.log("Current Chapter: " + currentChapter);
     showRightChapter(0, false);
 
-    for (var i = 1; i <= 4; i+= 1) {
+    for (var i = 1; i < numberOfChapters; i+= 1) {
       $("#ch" + i).show();
       $("#ch" + i).hide();
     }
