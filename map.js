@@ -353,7 +353,10 @@
   }
 
   function hallPopupInfo(hall_info) {
-    return "<b>Hall:</b> " + hall_info.Hall + "</br><b>University:</b> " + hall_info.University + "</br><b>Address:</b> " +  hall_info.Address;
+    return "<b>Hall:</b> " + hall_info.Hall +
+    "</br><b>University:</b> " + hall_info.University +
+    "</br><b>Address:</b> " +  hall_info.Address +
+    "</br><b>Owned By:</b> " + hall_info["Owned by"];
   }
 
   function companyPopupInfo(company_name, company_info) {
