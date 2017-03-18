@@ -94,14 +94,37 @@ body {
   font-size: 9px;
 }
 
+.chapter-container {
+  width: 100vw;
+  height: 42vh;
+}
+
 .chapter {
   position: absolute;
   height: 100%;
   width: 100%;
   display: none;
   padding-left: 5vw;
-  padding-top: 2vh;
+  padding-top: 5vh;
   padding-bottom: 1vh;
+  padding-right: 5vw;
+}
+
+.arrows {
+  position: absolute;
+  width: 100vw;
+  z-index: 999;
+}
+
+.left-arrow {
+  float: left;
+  padding-top: 2vh;
+  padding-left: 5vw;
+}
+
+.right-arrow {
+  float: right;
+  padding-top: 2vh;
   padding-right: 5vw;
 }
 

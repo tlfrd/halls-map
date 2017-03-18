@@ -29,14 +29,15 @@
   function hideLeftChapter(id) {
     var chapter = $("#ch" + id);
     chapter.animate({
-        left: chapter.width() * 1.2
+        left: chapter.width() * 1.3
     }, 500);
   }
 
   function hideRightChapter(id) {
+    console.log(id);
     var chapter = $("#ch" + id);
     chapter.animate({
-        right: chapter.width() * 1.2
+        left: -(chapter.width() * 1.3)
     }, 500);
   }
 
@@ -61,7 +62,7 @@
       chapter.show().css({
         right: -(chapter.width())
       }).animate({
-        right: 0
+        left: 0
       }, 500);
     } else {
       chapter.show();
@@ -71,6 +72,13 @@
   Story.init = function () {
     console.log("Current Chapter: " + currentChapter);
     showRightChapter(0, false);
+
+    $('.right-arrow').click(function() {
+      Story.nextChapter();
+    });
+    $('.left-arrow').click(function() {
+      Story.previousChapter();
+    });
   };
 
 })($, window.Story = window.Story || {});
