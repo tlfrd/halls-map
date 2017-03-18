@@ -7,12 +7,19 @@
   // Public Property
   // HallsMap.something = HallsMap.something || undefined;
 
+  // JSON urls
   HallsMap.hallsJSONUrl = "halls.json";
   HallsMap.companiesJSONUrl = "companies.json";
   HallsMap.unisJSONUrl = "universities.json";
 
-  var initLatLong = [51.505, -0.09];
-  var zoomLevel = 12;
+  // Display Certain UI elements
+  HallsMap.displayInstructions = true;
+  HallsMap.displayUniversitySelection = true;
+  HallsMap.displayKey = true;
+  HallsMap.keyPosition = "topleft";
+
+  HallsMap.initLatLong = [51.505, -0.09];
+  HallsMap.zoomLevel = 12;
 
   var drop_control_up = false;
 
@@ -58,7 +65,7 @@
   // PUBLIC init
   HallsMap.init = function () {
     // initialise map
-    mymap = L.map('map', {zoomControl: false}).setView(initLatLong, zoomLevel);
+    mymap = L.map('map', {zoomControl: false}).setView(HallsMap.initLatLong, HallsMap.zoomLevel);
 
     // add tile layer to map
     L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
@@ -173,8 +180,8 @@
   }
 
   // Private Method
-  function addKey(map) {
-    var keyUI = L.control({position: 'topleft'});
+  function addKey(map, position) {
+    var keyUI = L.control({position: position});
 
     keyUI.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'info');
@@ -539,12 +546,20 @@
               }
             }
           });
-          generateControls(universities, map, uni_map_data);
-          addKey(map);
+
+          if (HallsMap.displayUniversitySelection) {
+            generateControls(universities, map, uni_map_data);
+          }
+          if (HallsMap.displayKey) {
+            addKey(map, HallsMap.keyPosition);
+          }
+          if (HallsMap.displayInstructions) {
+            companyInfoUI = addCompanyDescriptionToMap(map);
+          }
+
           generateLayerGroups(unisWithHalls);
           generateCompanyGroups(companiesWithHalls);
           addAllIconsToArray(map);
-          companyInfoUI = addCompanyDescriptionToMap(map);
 
           L.control.zoom({
              position:'topleft'
