@@ -18,8 +18,8 @@
   HallsMap.displayKey = true;
   HallsMap.keyPosition = "topleft";
 
-  HallsMap.initLatLong = [51.505, -0.09];
-  HallsMap.zoomLevel = 12;
+  HallsMap.initLatLong = [51.505, -0.11];
+  HallsMap.zoomLevel = 11;
 
   var drop_control_up = false;
 

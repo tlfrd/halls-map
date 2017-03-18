@@ -17,20 +17,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
-<body>
-  <div class="remodal-bg">
+  <body>
     <div id="info-panel">
       <div id="logo">
         <a href="http://londonstudent.coop/"><img src="http://londonstudent.coop/wp-content/uploads/2016/12/new-ls-logo.png"/></a>
-        <div class="app-name">Halls Map</div>
-      </div>
-      <div id="copyright-desktop">
-        <p>Copyright © 2017 · London Student Media Limited</p>
+        <div class="app-name">A Halls Story</div>
       </div>
     </div>
     <div id="map"></div>
+    <div id="story-panel">
+      <div id="chapter-container">
+        <div class="chapter" id="ch0">
+          <div class="chapter-content">
+            <h4>Private Halls</h4>
+            <p>An investigation by London Student into privately owned student accommodation in London has revealed the surprising parties profiting from student rent - and the extraordinary lack of affordable accommodation.</p>
+            <p>Although more than 30,000 students live in private halls in London, London Student found no privately-owned rooms with advertised rents within the NUS criteria for affordable student housing.</p>
+            <p>Instead, the focus is on luxury developments featuring gyms, cinemas, swimming pools and more, with a high price tag and profitability. In one residence London Student identified, rent reached £585 per week, or £30,420 per year, nearly three times the maximum available student finance.</p>
+            <p>London Student mapped halls in London, along with their owners and affiliated universities, to build a clearer picture of how student accommodation is changing.</p>
+          </div>
+        </div>
+        <div class="chapter" id="ch1">
+          <div class="chapter-content">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="chapter" id="ch2">
+          <div class="chapter-content">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="chapter" id="ch3">
+          <div class="chapter-content">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="chapter" id="ch4">
+          <div class="chapter-content">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="../map.js"></script>
+    <script src="story.js"></script>
     <script>
       $(document).ready(function () {
         HallsMap.hallsJSONUrl = "../json/halls.json";
@@ -40,158 +74,8 @@
         HallsMap.displayInstructions = false;
         HallsMap.keyPosition = "topright";
         HallsMap.init();
+        Story.init();
       });
     </script>
-  </div>
-</body>
-
-  <div class="remodal" data-remodal-id="Unite Students">
-    <button data-remodal-action="close" class="remodal-close"></button>
-    <h3>Unite Students</h3>
-      <div class="company-description-modal">
-        <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-        <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-        <p>None of their London rooms (as currently advertised) meet the affordability criteria set out by the NUS. Affordability is calculated as rooms costing less than 50% of the maximum available student loan.</p>
-        <p>The company has come under fire from housing activists for their prices, including a flash occupation of their Holborn offices in October 2016.</p>
-        <p>A spokesperson said: “We recognise that there is concern about the rising cost of a university education and accommodation, and that affordability is an issue for many students.</p>
-        <p>“In setting our rents, we work closely with university accommodation departments, and we are constantly looking at ways to provide a better student life experience as affordably as possible.”</p>
-        <p>A document from 2012 seen by London Student set out their intention to expand in London faster than elsewhere, as the capital’s high levels of housing demand, higher rents and large international student population offers high profitability.</p>
-        <p>In the same document Unite present Unite Capital Cities, a joint venture with the Government of Singapore which holds more than £385m worth of property in London and Edinburgh. Under the name London Student Accommodation Venture, the same partnership intended to invest a further £330m in London properties.</p>
-        <p>Despite opposition from student campaigns, their stake in the housing market <a href="http://www.unite-group.co.uk/sites/default/files/2017-02/2016-Preliminary-Results-Presentation.pdf">continues to grow</a>, as they open more halls and enter into nominational agreements with universities - a form of outsourcing where the university pays Unite to reserve spaces for their students.</p>
-        <p>UCL reserves spaces in Unite St Pancras Way for its students, where residents have <a href="http://www.hallbookers.co.uk/halls/441/st-pancras-way-london.html">complained</a> of infrequent cleaning services and even mice problems.</p>
-      </div>
-    <br>
-    <button data-remodal-action="cancel" class="remodal-cancel-red">Return to map</button>
-  </div>
-
-  <div id="Unite Students" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  <div id="UPP" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Urbanest" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Liberty Living" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Sanctuary Students" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="EC1 Residences" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Derwent FM" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="CRM Students" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Greystar" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Homes for Students" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Campus Living Villages" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Mansion Student" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Swan Housing Association" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Chapter Living" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Paragon Student Lets" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Fresh Student Living" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Downing Students" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="DandiSpace" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Cass and Claredale" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Collegiate AC" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Viridian" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Legal and General Ltd" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="BIS (Postal Services Act 2011) Company Ltd" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="Carillion" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="IQ" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-  <div id="IQSA Group Limited" class="company-description-hidden">
-    <p>One of the UK’s largest student accommodation providers, Unite have more than 50,000 beds across the UK including 10,124 beds in London.</p>
-    <p>As of February 23 2016, Rents in Unite’s 27 London halls start at £149 per week for a room in North Lodge, Tottenham Hale, and go up to £373 per week  for a studio flat in Kirby Street, Farringdon.</p>
-    <p>...</p><a class="description-link" href="#Unite Students">Read more</a>
-  </div>
-
+  </body>
 </html>

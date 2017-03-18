@@ -8,16 +8,8 @@ body {
   border-bottom: 1px solid black;
 }
 
-#halls-selection {
-  display: none;
-}
-
-.drop-control {
-  text-align: center;
-}
-
 #map {
-  height: 94vh;
+  height: 52vh;
   width: 100vw;
 }
 
@@ -31,49 +23,8 @@ body {
   width: auto;
 }
 
-#copyright-desktop {
-  display: none;
-}
-
-.universities {
-  color: #0074e8;
-  cursor: hand;
-  cursor: pointer;
-}
-
-#all {
-  margin-top: 7px;
-}
-
-.company-description-container {
-  display: none;
-}
-
-.company-description-hidden {
-  display: none;
-}
-
-.company-description-container-mobile {
-  display: block;
-  max-width: 60vw;
-}
-
-.company-description-mobile {
-  display: block;
-}
-
-.instructions {
-  line-height: 20px;
-}
-
-.universities, .universities-all {
-  position: relative;
-  bottom: 3px;
-  left: 3px;
-}
-
-.universities:hover {
-  color: black;
+#story-panel {
+  border-bottom: 1px solid black;
 }
 
 .info {
@@ -105,12 +56,6 @@ body {
 .leaflet-touch .leaflet-bar {
   border: 1px solid black;
   border-radius: 0px;
-}
-
-.control-all-hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-top: 1px solid black;
 }
 
 .app-name {
@@ -145,50 +90,28 @@ body {
   font-size: 14px;
 }
 
-@media only screen and (min-width: 768px) {
-  .leaflet-bottom {
-    bottom: 22px;
-  }
+.leaflet-container .leaflet-control-attribution {
+  font-size: 9px;
+}
 
+.chapter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  padding-left: 5vw;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  padding-right: 5vw;
+}
+
+@media only screen and (min-width: 768px) {
   .app-name {
     font-size: 1.2em;
   }
 
-  .drop-control {
-    display: none;
-    font-weight: normal;
-    padding-bottom: 10px;
-  }
-
-  #halls-selection {
-    display: block;
-  }
-
   .info {
       font: 14px/16px Arial, Helvetica, sans-serif;
-  }
-
-  .universities, .universities-all {
-    bottom: 2px;
-  }
-
-  .company-description-container {
-    display: block;
-    padding-top: 3px;
-  }
-
-  .company-description {
-    margin-top: 2px;
-    padding: 5px;
-    text-align: left;
-    display: block;
-    max-height: 60vh;
-    max-width: 30vw;
-  }
-
-  .instructions {
-    display: block;
-    text-align: left;
   }
 
   .exit-button {
@@ -206,14 +129,6 @@ body {
   }
 
   .modal-link {
-    display: none;
-  }
-
-  .company-description-container-mobile {
-    display: none;
-  }
-
-  .company-description-hidden-mobile {
     display: none;
   }
 }
