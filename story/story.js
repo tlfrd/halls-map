@@ -2,13 +2,26 @@
 
   Story.chaptersUpdate = {
     0: function() {
-      console.log("do nothing");
+      HallsMap.flyTo([52.505, -1], 6);
     },
     1: function() {
-      console.log("hellodss1");
+      HallsMap.flyToCompany("UPP", 11);
+      HallsMap.toggleAllButCompany("UPP", false);
+      HallsMap.showCompanyLinks("UPP");
     },
     2: function() {
-      console.log("heddsdsllo1");
+      HallsMap.hideAllLinks();
+      var unite = HallsMap.getCompanyAndIcons("Unite Students");
+      var chapterLiving = HallsMap.getCompanyAndIcons("Chapter Living");
+      var crm = HallsMap.getCompanyAndIcons("CRM Students");
+      // var vero = HallsMap.getCompanyAndIcons("Vero Group");
+      // console.log(vero);
+      var array = _.concat([], unite, chapterLiving, crm);
+      HallsMap.toggleAllBut(array, false);
+      HallsMap.showCompanyLinks("Unite Students");
+      HallsMap.showCompanyLinks("Chapter Living");
+      HallsMap.showCompanyLinks("CRM Students");
+      HallsMap.fitAllIconsZoom(array, 7);
     },
     3: function() {
       console.log("hedsddllo1");
@@ -24,10 +37,12 @@
   // methods to revert
   Story.chaptersRevert = {
     0: function() {
-      console.log("hello!!!");
+      HallsMap.hideAllLinks();
     },
     1: function() {
-      console.log("hellodss1");
+      HallsMap.showCompanyLinks("UPP");
+      HallsMap.toggleAllButCompany("UPP", true);
+      HallsMap.showAllLinksFunc();
     },
     2: function() {
       console.log("heddsdsllo1");
@@ -103,8 +118,6 @@
     } else {
       chapter.show();
     }
-
-    callChapterFunctions(id);
   }
 
   function showRightChapter(id, animate_boolean) {

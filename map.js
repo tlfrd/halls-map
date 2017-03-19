@@ -21,7 +21,9 @@
   HallsMap.initLatLong = [51.505, -0.11];
   HallsMap.zoomLevel = 11;
 
-  HallsMap.showAllLinks = true;
+  HallsMap.showAllLinks = false;
+
+  HallsMap.disableCompanyClick = false;
 
   var drop_control_up = false;
 
@@ -34,6 +36,9 @@
   var iconGroups = {};
   var companyIconGroups = {};
   var uniMarkers = {};
+  var companyMarkers = {};
+
+  var companyData = {};
 
   var privateHallMarkers = [];
   var publicHallMarkers = [];
@@ -110,13 +115,56 @@
     }
   }
 
+  HallsMap.fitAllIconsZoom = function (icons_array, zoom) {
+    var group = new L.featureGroup(icons_array);
+    var boundsCenter = group.getBounds().getCenter();
+    mymap.flyTo(boundsCenter, zoom);
+  }
+
+  HallsMap.toggleAllBut = function (icons, toggleBoolean) {
+    for (var i in allMarkers) {
+      if (!_.includes(icons, allMarkers[i])) {
+        if (toggleBoolean) {
+          mymap.addLayer(allMarkers[i]);
+        } else {
+          mymap.removeLayer(allMarkers[i]);
+        }
+      }
+    }
+  }
+
   // PUBLIC method
-  HallsMap.showAllLinks = function () {
-    console.log(universitiesList);
-  };
+  HallsMap.showAllLinksFunc = function () {
+    for (var i in universitiesList) {
+      HallsMap.toggleUniversityLinks(universitiesList[i], true);
+    }
+  }
 
   HallsMap.hideAllLinks = function () {
+    for (var i in universitiesList) {
+      HallsMap.toggleUniversityLinks(universitiesList[i], false);
+    }
+  }
 
+  HallsMap.flyTo = function (location, zoom) {
+    mymap.flyTo(location, zoom);
+  }
+
+  HallsMap.flyToCompany = function(company, zoom) {
+    HallsMap.flyTo([companyData[company].Latitude, companyData[company].Longitude], zoom);
+  }
+
+  HallsMap.toggleAllButCompany = function(company, toggle_boolean) {
+    HallsMap.toggleAllBut(HallsMap.getCompanyAndIcons(company), toggle_boolean);
+  }
+
+  HallsMap.getCompanyAndIcons = function(company) {
+    var companyHallArray = [];
+    companyIconGroups[company]["halls"].eachLayer(function (layer) {
+      companyHallArray.push(layer);
+    });
+    companyHallArray.push(companyMarkers[company]);
+    return companyHallArray;
   }
 
   // PUBLIC Method
@@ -309,8 +357,10 @@
   // add to object of universities and their halls
   function addToUnisWithHalls(unisWithHalls, hall, hallMarker, type) {
     if (type === "lines" || type === "uni-lines") {
-      hallMarker.addTo(mymap);
-      uniDisplayedLines[hallMarker._leaflet_id] = hallMarker;
+      if (HallsMap.showAllLinks) {
+        hallMarker.addTo(mymap);
+        uniDisplayedLines[hallMarker._leaflet_id] = hallMarker;
+      }
     }
     if (unisWithHalls[hall.University]) {
       if (unisWithHalls[hall.University][type]) {
@@ -450,8 +500,6 @@
 
     var companyMarker = L.marker(latLong, {
       icon: L.BeautifyIcon.icon(companiesOptions)
-    }).on('click', function() {
-      HallsMap.showCompanyLinks(hall_info["Owned by"]);
     });
 
     companyMarker.addTo(map);
@@ -462,9 +510,14 @@
     companyMarker.on('mouseout', function (e) {
       this.closePopup();
     });
-    companyMarker.on('click', function (e) {
-      changeCompanyDescription(hall_info["Owned by"], map);
-    });
+    if (!HallsMap.disableCompanyClick) {
+      companyMarker.on('click', function (e) {
+        changeCompanyDescription(hall_info["Owned by"], map);
+        HallsMap.showCompanyLinks(hall_info["Owned by"]);
+      });
+    }
+
+    companyMarkers[hall_info["Owned by"]] = companyMarker;
 
     return companyMarker;
   }
@@ -493,6 +546,7 @@
       $.getJSON(HallsMap.companiesJSONUrl, function(companies) {
         $.getJSON(HallsMap.unisJSONUrl, function(uni_map_data) {
           universityData = uni_map_data;
+          companyData = companies;
 
           // add unis to map
           $.each(uni_map_data, function(uni_name, uni_info) {
