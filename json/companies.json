@@ -17,8 +17,8 @@
   },
   "Urbanest": {
     "Head office address": "55 Strand, London, WC2N 5LR",
-    "Latitude": 51.509439,
-    "Longitude": 0.123712,
+    "Latitude": 51.509359,
+    "Longitude": -0.123669,
     "Other info - scandals, tax issues etc.": "",
     "Description done (y/n) - in this sheet": "",
     "": ""
@@ -69,7 +69,7 @@
     "Longitude": 0.026084,
     "Other info - scandals, tax issues etc.": "Head office  18 Broad Street,\nSuite 300\nCharleston, South Carolina 29401\n843.579.9400",
     "Description done (y/n) - in this sheet": "",
-    "": ""
+    "": "Leave description for Emma - I have most the data already"
   },
   "Homes for Students": {
     "Head office address": "Hornbeam House, Hornbeam Park, Harrogate, North Yorkshire, HG2 8QT",
@@ -87,14 +87,6 @@
     "Description done (y/n) - in this sheet": "",
     "": ""
   },
-  "Mansion Student": {
-    "Head office address": "1 Oakwood Square, Cheadle Royal Business Park, Cheadle, Cheshire, SK8 3SB",
-    "Latitude": 53.375535,
-    "Longitude": -2.224696,
-    "Other info - scandals, tax issues etc.": "",
-    "Description done (y/n) - in this sheet": "",
-    "": ""
-  },
   "Swan Housing Association": {
     "Head office address": "Pilgrim House, High Street, Billericay, CM12 9XY",
     "Latitude": 51.62323,
@@ -104,9 +96,9 @@
     "": ""
   },
   "Chapter Living": {
-    "Head office address": "Part of Greystar Holdings (Europe) Ltd - see Greystar address",
-    "Latitude": 51.575153,
-    "Longitude": 0.026084,
+    "Head office address": "Finsbury Circus House, 15 Finsbury Circus, London, EC2M 7EB",
+    "Latitude": 51.51852,
+    "Longitude": -0.086213,
     "Other info - scandals, tax issues etc.": "",
     "Description done (y/n) - in this sheet": "",
     "": ""
@@ -117,7 +109,7 @@
     "Longitude": -0.118145,
     "Other info - scandals, tax issues etc.": "Subsidiary of Notting Hill Housing Group",
     "Description done (y/n) - in this sheet": "",
-    "": "aka Toaurag Trust"
+    "": ""
   },
   "Fresh Student Living": {
     "Head office address": "7-9 Swallow Street, London, W1B 4DE",
@@ -125,7 +117,7 @@
     "Longitude": -0.137592,
     "Other info - scandals, tax issues etc.": "",
     "Description done (y/n) - in this sheet": "",
-    "": ""
+    "": "Address may be wrong"
   },
   "Downing Students": {
     "Head office address": "5 Myrtle Street Liverpool L7 7DN",
@@ -201,9 +193,41 @@
   },
   "IQSA Group Limited": {
     "Head office address": "Finsbury Circus House, 15 Finsbury Circus, London, EC2M 7EB",
-    "Latitude": "",
-    "Longitude": "",
+    "Latitude": 51.51852,
+    "Longitude": -0.086213,
     "Other info - scandals, tax issues etc.": "Company formed by the merger of Prodigy and iQ; heavily invested in by Greystar (hard to tell where investment ends and ownership begins). The joint owners are thus Wellcome Trust, Goldman Sachs and Greystar, according to the FT: https://www.ft.com/content/3814fa38-bdf9-11e5-846f-79b0e3d20eaf",
+    "Description done (y/n) - in this sheet": "",
+    "": ""
+  },
+  "Chapter 1": {
+    "Head office address": "Chapter 1, 2 Exton Street, London, SE1 8UE",
+    "Latitude": 51.5043913,
+    "Longitude": -0.1108483,
+    "Other info - scandals, tax issues etc.": "",
+    "Description done (y/n) - in this sheet": "",
+    "": ""
+  },
+  "A2Dominion Group": {
+    "Head office address": "The Point, 37 North Wharf Road, London, W2 1BD",
+    "Latitude": 51.518643,
+    "Longitude": -0.176376,
+    "Other info - scandals, tax issues etc.": "",
+    "Description done (y/n) - in this sheet": "",
+    "": ""
+  },
+  "Vero Group": {
+    "Head office address": "Finsbury Circus House, 15 Finsbury Circus, London, EC2M 7EB",
+    "Latitude": 51.51852,
+    "Longitude": -0.086213,
+    "Other info - scandals, tax issues etc.": "",
+    "Description done (y/n) - in this sheet": "",
+    "": ""
+  },
+  "GFM": {
+    "Head office address": "4 Greengate, Cardale Park, Harrogate, HG3 1GY",
+    "Latitude": 53.975872,
+    "Longitude": -1.567556,
+    "Other info - scandals, tax issues etc.": "",
     "Description done (y/n) - in this sheet": "",
     "": ""
   }
