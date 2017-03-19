@@ -258,6 +258,24 @@
     }
   }
 
+  HallsMap.toggleMarkers = function (markers, toggle_boolean) {
+    for (var i in markers) {
+        if (toggle_boolean) {
+          mymap.addLayer(markers[i]);
+        } else {
+          mymap.removeLayer(markers[i]);
+        }
+    }
+  }
+
+  HallsMap.toggleAllUniMarkers = function (boolean) {
+    HallsMap.toggleMarkers(uniMarkers, boolean);
+  }
+
+  HallsMap.toggleAllCompanyMarkers = function (boolean) {
+    HallsMap.toggleMarkers(companyMarkers, boolean);
+  }
+
   // Private Method
   function addKey(map, position) {
     var keyUI = L.control({position: position});

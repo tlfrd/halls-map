@@ -25,11 +25,13 @@
     },
     3: function() {
       HallsMap.toggleUniversityIcons("public", false);
-      HallsMap.flyTo([51.505, -0.11], 10);
+      HallsMap.flyTo([51.505, -0.11], 11);
       HallsMap.showAllCompanyLinks();
     },
     4: function() {
-      HallsMap.flyTo([51.505, -0.11], 9);
+      HallsMap.flyTo([51.505, -0.11], 11);
+      HallsMap.toggleAllUniMarkers(false);
+      HallsMap.toggleAllCompanyMarkers(false);
     },
     5: function() {
       // console.log("hello1");
@@ -62,7 +64,8 @@
       HallsMap.showAllCompanyLinks();
     },
     4: function() {
-      // console.log("hesdsllo1");
+      HallsMap.toggleAllUniMarkers(true);
+      HallsMap.toggleAllCompanyMarkers(true);
     },
     5: function() {
       // console.log("hello1");

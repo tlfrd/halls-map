@@ -93,8 +93,8 @@ body {
 .company-description-modal {
   text-align: left;
   max-height: 50vh;
-  overflow: scroll;
-  border-bottom: 1px solid rgb(232, 0, 0);
+  /*overflow: scroll;*/
+  /*border-bottom: 1px solid rgb(232, 0, 0);*/
 }
 
 .remodal-cancel-red {
