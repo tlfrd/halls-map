@@ -4,6 +4,7 @@ body {
 }
 
 #info-panel {
+  display: block;
   height: 6vh;
   border-bottom: 1px solid black;
 }
@@ -25,6 +26,10 @@ body {
 
 #story-panel {
   border-bottom: 1px solid black;
+}
+
+#info-panel-desktop {
+  display: none;
 }
 
 .info {
@@ -155,5 +160,66 @@ body {
 
   .modal-link {
     display: none;
+  }
+
+  #info-panel {
+    display: none;
+  }
+
+  #map {
+    height: 100vh;
+    width: 70%;
+    float: right;
+  }
+
+  #story-panel {
+    height: 100vh;
+    width: 30%;
+    float: left;
+  }
+
+  .chapter-container {
+    width: 100vw;
+    height: 42vh;
+  }
+
+  .chapter {
+    left: 100%;
+    position: absolute;
+    width: 30%;
+    display: none;
+    padding-left: 3vw;
+    padding-top: 5vh;
+    padding-right: 3vw;
+    -webkit-transition: left 0.5s;
+    transition: left 0.5s;
+  }
+
+  .arrows {
+    position: absolute;
+    width: 30%;
+    z-index: 999;
+  }
+
+  .left-arrow {
+    float: left;
+    padding-top: 2vh;
+    padding-left: 3vw;
+  }
+
+  .right-arrow {
+    float: right;
+    padding-top: 2vh;
+    padding-right: 3vw;
+  }
+
+  #info-panel-desktop {
+    display: block;
+    padding-top: 2vh;
+  }
+
+  #logo {
+    text-align: left;
+    padding-left: 2vw;
   }
 }
