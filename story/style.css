@@ -12,6 +12,7 @@ body {
 #map {
   height: 52vh;
   width: 100%;
+  z-index: 999;
 }
 
 #logo {
@@ -30,6 +31,12 @@ body {
 
 #info-panel-desktop {
   display: none;
+}
+
+#return-mobile {
+  position: absolute;
+  top: 1.5vw;
+  left: 3vw;
 }
 
 .info {
@@ -127,17 +134,21 @@ body {
   float: left;
   padding-top: 2vh;
   padding-left: 5vw;
+  font-size: 20px;
+
 }
 
 .right-arrow {
   float: right;
   padding-top: 2vh;
   padding-right: 5vw;
+  font-size: 20px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .app-name {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    display: block;
   }
 
   .info {
@@ -176,15 +187,17 @@ body {
     height: 100vh;
     width: 30%;
     float: left;
+    border-bottom: none;
   }
 
   .chapter-container {
     width: 100vw;
-    height: 42vh;
   }
 
   .chapter {
     left: 100%;
+    height: 91vh;
+    overflow: scroll;
     position: absolute;
     width: 30%;
     display: none;
@@ -193,6 +206,12 @@ body {
     padding-right: 3vw;
     -webkit-transition: left 0.5s;
     transition: left 0.5s;
+  }
+
+  #return-desktop {
+    position: absolute;
+    top: 1.5vw;
+    left: 3vw;
   }
 
   .arrows {
@@ -215,11 +234,6 @@ body {
 
   #info-panel-desktop {
     display: block;
-    padding-top: 2vh;
-  }
-
-  #logo {
-    text-align: left;
-    padding-left: 2vw;
+    padding-top: 1vh;
   }
 }
