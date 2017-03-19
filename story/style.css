@@ -108,6 +108,10 @@ body {
   font-size: 14px;
 }
 
+.remodal h3 {
+  text-align: left;
+}
+
 .leaflet-container .leaflet-control-attribution {
   font-size: 9px;
 }
