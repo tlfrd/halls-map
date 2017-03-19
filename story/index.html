@@ -18,9 +18,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
   <body>
+    <div class="remodal-bg">
     <div id="info-panel">
       <div id="return-mobile">
         <a href="http://londonstudent.coop/">Back</a>
+      </div>
+      <div id="info-button-mobile">
+        <a href="#more-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
       </div>
       <div id="logo">
         <a href="http://londonstudent.coop/"><img src="http://londonstudent.coop/wp-content/uploads/2016/12/new-ls-logo.png"/></a>
@@ -33,6 +37,9 @@
         <div id="return-desktop">
           <a href="http://londonstudent.coop/">Back</a>
         </div>
+        <div id="info-button">
+          <a href="#more-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        </div>
         <div id="logo">
           <a href="http://londonstudent.coop/"><img src="http://londonstudent.coop/wp-content/uploads/2016/12/new-ls-logo.png"/></a>
           <div class="app-name">A Halls Story</div>
@@ -40,8 +47,8 @@
       </div>
       <div id="chapter-container">
         <div class="arrows">
-          <div class="left-arrow"><i class="fa fa-angle-left fa-2" aria-hidden="true"></i></div>
-          <div class="right-arrow"><i class="fa fa-angle-right fa-2" aria-hidden="true"></i></div>
+          <div class="left-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+          <div class="right-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
         </div>
         <div class="chapter" id="ch0">
           <div class="chapter-content">
@@ -130,5 +137,15 @@
         Story.init();
       });
     </script>
+    </div>
   </body>
+
+  <div class="remodal" data-remodal-id="more-info">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h3>Information</h3>
+      <div class="company-description-modal">
+        <p>Some information</p>
+      </div>
+    <br>
+  </div>
 </html>
