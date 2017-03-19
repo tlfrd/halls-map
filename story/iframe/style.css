@@ -1,0 +1,159 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#info-panel {
+  height: 6vh;
+  border-bottom: 1px solid black;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+#logo {
+  padding-top: 1vh;
+  text-align: center;
+}
+
+#logo img {
+  height: 4vh;
+  width: auto;
+}
+
+#story-panel {
+  border-bottom: 1px solid black;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 10px/12px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid black;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.circle-left-padding {
+  padding-left: 10px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+  border: 1px solid black;
+  background: rgba(255,255,255,0.9);
+  border-radius: 0px;
+  max-width: 200px;
+}
+
+.leaflet-touch .leaflet-bar {
+  border: 1px solid black;
+  border-radius: 0px;
+}
+
+.app-name {
+  display: inline;
+  font-weight: bold;
+  position: relative;
+  right: 4px;
+  top: 1px;
+}
+
+.modal-link {
+  display: block;
+  font-weight: bold;
+  color: rgb(232, 0, 0);
+}
+
+.company-description-modal {
+  text-align: left;
+  max-height: 50vh;
+  overflow: scroll;
+  border-bottom: 1px solid rgb(232, 0, 0);
+}
+
+.remodal-cancel-red {
+  background: rgb(232, 0, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  font-size: 9px;
+}
+
+.chapter-container {
+  width: 100vw;
+  height: 42vh;
+}
+
+.chapter {
+  left: 100%;
+  position: absolute;
+  width: 100%;
+  display: none;
+  padding-left: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 1vh;
+  padding-right: 5vw;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+.left-arrow {
+  float: left;
+  padding-top: 2vh;
+  padding-left: 5vw;
+}
+
+.right-arrow {
+  float: right;
+  padding-top: 2vh;
+  padding-right: 5vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .app-name {
+    font-size: 1.2em;
+  }
+
+  .info {
+      font: 14px/16px Arial, Helvetica, sans-serif;
+  }
+
+  .exit-button {
+    float: right
+  }
+
+  .exit-button:hover {
+    color: red;
+    cursor: hand;
+    cursor: pointer;
+  }
+
+  .info-company-name {
+    padding-left:5px;
+  }
+
+  .modal-link {
+    display: none;
+  }
+}
