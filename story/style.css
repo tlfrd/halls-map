@@ -10,7 +10,7 @@ body {
 
 #map {
   height: 52vh;
-  width: 100vw;
+  width: 100%;
 }
 
 #logo {
@@ -115,7 +115,7 @@ body {
 
 .arrows {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   z-index: 999;
 }
 
