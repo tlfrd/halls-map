@@ -5,10 +5,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../leaflet-beautify-marker-icon.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="http://londonstudent.coop/wp-content/uploads/2017/03/marker-icons.css" />
+  <link rel="stylesheet" href="http://londonstudent.coop/wp-content/uploads/2017/03/story-style.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-  <script src="../../leaflet-beautify-marker-icon.js"></script>
+  <script src="http://londonstudent.coop/wp-content/uploads/2017/03/marker-icons.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- try to remove lodash -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
@@ -18,14 +18,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
   <body>
-    <!-- <div id="info-panel">
+    <div class="remodal-bg">
+    <div id="info-panel">
+      <div id="return-mobile">
+        <a href="http://londonstudent.coop/">Back</a>
+      </div>
+      <div id="info-button-mobile">
+        <a href="#more-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+      </div>
       <div id="logo">
         <a href="http://londonstudent.coop/"><img src="http://londonstudent.coop/wp-content/uploads/2016/12/new-ls-logo.png"/></a>
         <div class="app-name">A Halls Story</div>
       </div>
-    </div> -->
+    </div>
     <div id="map"></div>
     <div id="story-panel">
+      <div id="info-panel-desktop">
+        <div id="return-desktop">
+          <a href="http://londonstudent.coop/">Back</a>
+        </div>
+        <div id="info-button">
+          <a href="#more-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        </div>
+        <div id="logo">
+          <a href="http://londonstudent.coop/"><img src="http://londonstudent.coop/wp-content/uploads/2016/12/new-ls-logo.png"/></a>
+          <div class="app-name">A Halls Story</div>
+        </div>
+      </div>
       <div id="chapter-container">
         <div class="arrows">
           <div class="left-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
@@ -34,10 +53,12 @@
         <div class="chapter" id="ch0">
           <div class="chapter-content">
             <h4>Chapter 0</h4>
+            <p><i>Navigate using the left and right buttons to read more.</i></p>
             <p>An investigation by London Student into privately owned student accommodation in London has revealed the surprising parties profiting from student rent - and the extraordinary lack of affordable accommodation.</p>
             <p>Although more than 30,000 students live in private halls in London, London Student found no privately-owned rooms with advertised rents within the NUS criteria for affordable student housing.</p>
             <p>Instead, the focus is on luxury developments featuring gyms, cinemas, swimming pools and more, with a high price tag and profitability. In one residence London Student identified, rent reached £585 per week, or £30,420 per year, nearly three times the maximum available student finance.</p>
-            <p>London Student mapped halls in London, along with their owners and affiliated universities, to build a clearer picture of how student accommodation is changing.</p>
+            <p>London Student mapped halls in London, along with their owners and affiliated universities, to build a clearer picture of how student accommodation is changing.</p></br>
+            <p><i>Read more: <a href="#">A Note on Affordability</a></i></p>
           </div>
         </div>
         <div class="chapter" id="ch1">
@@ -97,13 +118,13 @@
       </div>
     </div>
 
-    <script src="../../map.js"></script>
-    <script src="../story.js"></script>
+    <script src="http://londonstudent.coop/wp-content/uploads/2017/03/map.js"></script>
+    <script src="http://londonstudent.coop/wp-content/uploads/2017/03/story.js"></script>
     <script>
       $(document).ready(function () {
-        HallsMap.hallsJSONUrl = "../../json/halls.json";
-        HallsMap.unisJSONUrl = "../../json/universities.json";
-        HallsMap.companiesJSONUrl = "../../json/companies.json";
+        HallsMap.hallsJSONUrl = "https://raw.githubusercontent.com/tlfrd/halls-map/gh-pages/json/halls.json";
+        HallsMap.unisJSONUrl = "https://raw.githubusercontent.com/tlfrd/halls-map/gh-pages/json/universities.json";
+        HallsMap.companiesJSONUrl = "https://raw.githubusercontent.com/tlfrd/halls-map/gh-pages/json/companies.json";
         HallsMap.displayUniversitySelection = false;
         HallsMap.displayInstructions = false;
         HallsMap.keyPosition = "topright";
@@ -116,5 +137,15 @@
         Story.init();
       });
     </script>
+    </div>
   </body>
+
+  <div class="remodal" data-remodal-id="more-info">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h3>Information</h3>
+      <div class="company-description-modal">
+        <p>Some information</p>
+      </div>
+    <br>
+  </div>
 </html>
