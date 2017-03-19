@@ -81,10 +81,18 @@
       currentChapter += 1;
       Story.chaptersUpdate[currentChapter]();
       console.log("Current Chapter: " + currentChapter);
+      $(".right-arrow").fadeIn();
+      $(".left-arrow").show();
+    }
+    if (currentChapter === numberOfChapters - 1) {
+      $(".right-arrow").fadeOut();
     }
   };
 
   Story.previousChapter = function() {
+    if (currentChapter === 1) {
+      $(".left-arrow").fadeOut();
+    }
     if (currentChapter != 0) {
       hideLeftChapter(currentChapter);
       showLeftChapter(currentChapter - 1, true);
@@ -92,6 +100,7 @@
       currentChapter -= 1;
       Story.chaptersUpdate[currentChapter]();
       console.log("Current Chapter: " + currentChapter);
+      $(".right-arrow").fadeIn();
     }
   };
 
@@ -151,6 +160,7 @@
   Story.init = function () {
     console.log("Current Chapter: " + currentChapter);
     showRightChapter(0, false);
+    $(".left-arrow").hide();
     Story.chaptersUpdate[currentChapter]();
 
     for (var i = 1; i < numberOfChapters; i+= 1) {
