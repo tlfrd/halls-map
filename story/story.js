@@ -1,12 +1,46 @@
 (function($, Story) {
 
-  var chapters = {
-    0: [],
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: []
+  Story.chaptersUpdate = {
+    0: function() {
+      console.log("do nothing");
+    },
+    1: function() {
+      console.log("hellodss1");
+    },
+    2: function() {
+      console.log("heddsdsllo1");
+    },
+    3: function() {
+      console.log("hedsddllo1");
+    },
+    4: function() {
+      console.log("hesdsllo1");
+    },
+    5: function() {
+      console.log("hello1");
+    }
+  };
+
+  // methods to revert
+  Story.chaptersRevert = {
+    0: function() {
+      console.log("hello!!!");
+    },
+    1: function() {
+      console.log("hellodss1");
+    },
+    2: function() {
+      console.log("heddsdsllo1");
+    },
+    3: function() {
+      console.log("hedsddllo1");
+    },
+    4: function() {
+      console.log("hesdsllo1");
+    },
+    5: function() {
+      console.log("hello1");
+    }
   };
 
   var numberOfChapters = 6;
@@ -17,7 +51,9 @@
     if (currentChapter < numberOfChapters - 1) {
       hideRightChapter(currentChapter);
       showRightChapter(currentChapter + 1, true);
+      Story.chaptersRevert[currentChapter]();
       currentChapter += 1;
+      Story.chaptersUpdate[currentChapter]();
       console.log("Current Chapter: " + currentChapter);
     }
   };
@@ -26,7 +62,9 @@
     if (currentChapter != 0) {
       hideLeftChapter(currentChapter);
       showLeftChapter(currentChapter - 1, true);
+      Story.chaptersRevert[currentChapter]();
       currentChapter -= 1;
+      Story.chaptersUpdate[currentChapter]();
       console.log("Current Chapter: " + currentChapter);
     }
   };
@@ -65,6 +103,8 @@
     } else {
       chapter.show();
     }
+
+    callChapterFunctions(id);
   }
 
   function showRightChapter(id, animate_boolean) {
@@ -87,6 +127,7 @@
   Story.init = function () {
     console.log("Current Chapter: " + currentChapter);
     showRightChapter(0, false);
+    Story.chaptersUpdate[currentChapter]();
 
     for (var i = 1; i < numberOfChapters; i+= 1) {
       $("#ch" + i).show();

@@ -21,9 +21,13 @@
   HallsMap.initLatLong = [51.505, -0.11];
   HallsMap.zoomLevel = 11;
 
+  HallsMap.showAllLinks = true;
+
   var drop_control_up = false;
 
   var companyInfoUI;
+
+  var universitiesList = [];
 
   var allMarkers = [];
 
@@ -104,6 +108,15 @@
         }
       }
     }
+  }
+
+  // PUBLIC method
+  HallsMap.showAllLinks = function () {
+    console.log(universitiesList);
+  };
+
+  HallsMap.hideAllLinks = function () {
+
   }
 
   // PUBLIC Method
@@ -295,6 +308,10 @@
 
   // add to object of universities and their halls
   function addToUnisWithHalls(unisWithHalls, hall, hallMarker, type) {
+    if (type === "lines" || type === "uni-lines") {
+      hallMarker.addTo(mymap);
+      uniDisplayedLines[hallMarker._leaflet_id] = hallMarker;
+    }
     if (unisWithHalls[hall.University]) {
       if (unisWithHalls[hall.University][type]) {
         unisWithHalls[hall.University][type].push(hallMarker);
@@ -493,6 +510,7 @@
               // OLD - REMOVE THIS
               if (!_.includes(universities, hall_info.University)) {
                 universities.push(hall_info.University)
+                universitiesList.push(hall_info.University);
               }
 
               // create hall marker and add to map
