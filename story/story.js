@@ -24,13 +24,15 @@
       HallsMap.fitAllIconsZoom(array, 7);
     },
     3: function() {
-      console.log("hedsddllo1");
+      HallsMap.toggleUniversityIcons("public", false);
+      HallsMap.flyTo([51.505, -0.11], 10);
+      HallsMap.showAllCompanyLinks();
     },
     4: function() {
-      console.log("hesdsllo1");
+      HallsMap.flyTo([51.505, -0.11], 9);
     },
     5: function() {
-      console.log("hello1");
+      // console.log("hello1");
     }
   };
 
@@ -45,16 +47,25 @@
       HallsMap.showAllLinksFunc();
     },
     2: function() {
-      console.log("heddsdsllo1");
+      var unite = HallsMap.getCompanyAndIcons("Unite Students");
+      var chapterLiving = HallsMap.getCompanyAndIcons("Chapter Living");
+      var crm = HallsMap.getCompanyAndIcons("CRM Students");
+      var array = _.concat([], unite, chapterLiving, crm);
+      HallsMap.toggleAllBut(array, true);
+      HallsMap.showCompanyLinks("Unite Students");
+      HallsMap.showCompanyLinks("Chapter Living");
+      HallsMap.showCompanyLinks("CRM Students");
+      // HallsMap.showAllLinksFunc();
     },
     3: function() {
-      console.log("hedsddllo1");
+      HallsMap.toggleUniversityIcons("public", true);
+      HallsMap.showAllCompanyLinks();
     },
     4: function() {
-      console.log("hesdsllo1");
+      // console.log("hesdsllo1");
     },
     5: function() {
-      console.log("hello1");
+      // console.log("hello1");
     }
   };
 

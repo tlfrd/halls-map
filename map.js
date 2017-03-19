@@ -24,12 +24,14 @@
   HallsMap.showAllLinks = false;
 
   HallsMap.disableCompanyClick = false;
+  HallsMap.displayReadMore = true;
 
   var drop_control_up = false;
 
   var companyInfoUI;
 
   var universitiesList = [];
+  var companiesList = [];
 
   var allMarkers = [];
 
@@ -115,6 +117,16 @@
     }
   }
 
+  HallsMap.getPublicOrPrivateIcons = function (privateOrPublic) {
+    if (privateOrPublic === "private") {
+      return privateHallMarkers;
+    }
+
+    if (privateOrPublic === "public") {
+      return publicHallMarkers;
+    }
+  }
+
   HallsMap.fitAllIconsZoom = function (icons_array, zoom) {
     var group = new L.featureGroup(icons_array);
     var boundsCenter = group.getBounds().getCenter();
@@ -137,6 +149,12 @@
   HallsMap.showAllLinksFunc = function () {
     for (var i in universitiesList) {
       HallsMap.toggleUniversityLinks(universitiesList[i], true);
+    }
+  }
+
+  HallsMap.showAllCompanyLinks = function() {
+    for (var i in companiesList) {
+      HallsMap.showCompanyLinks(companiesList[i]);
     }
   }
 
@@ -455,8 +473,12 @@
   }
 
   function companyPopupInfo(company_name, company_info) {
-    return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"] +
-    '</br><a class="modal-link" href="#' + "Unite Students" + '">Read more</a>';
+    if (HallsMap.displayReadMore) {
+      return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"] +
+      '</br><a class="modal-link" href="#' + "Unite Students" + '">Read more</a>';
+    } else {
+      return "<b>Company:</b> " + company_name + "</br><b>Address:</b> " + company_info["Head office address"];
+    }
   }
 
   function addUniToMap(uni_name, uni_info, map) {
@@ -581,6 +603,7 @@
 
                   if (!_.includes(companiesSeen, hall_info["Owned by"])) {
                     companiesSeen.push(hall_info["Owned by"]);
+                    companiesList.push(hall_info["Owned by"]);
                     // create company marker and add to map
                     addCompanyToMap(company, hall_info, map);
                   }
