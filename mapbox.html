@@ -92,30 +92,29 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', () => {
-    map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', (error, image) => {
-        if (error) throw error;
-        map.addImage('cat', image);
-        map.addLayer({
-            "id": "points",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {
-                    "type": "FeatureCollection",
-                    "features": [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [-0.15591514, 51.51830379]
-                        }
-                    }]
-                }
-            },
-            "layout": {
-                "icon-image": "cat",
-                "icon-size": 0.25
+    map.addLayer({
+        'id': 'museums',
+        'type': 'circle',
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-0.15591514, 51.51830379]
+                    }
+                }]
             }
-        });
+        },
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'circle-radius': 8,
+            'circle-color': 'rgba(55,148,179,1)'
+        },
     });
 });
 
